@@ -5,10 +5,10 @@ import NavBar from '../components/NavBar.vue'
 <template>
   <NavBar/>
   <div class="container">
-    <div class="row justify-content-center gap-5">
+    <div class="row justify-content-center gap-5 mt-5">
       <div class="col-md-5 mx-4 p-5">
         <h2>Meet our Medical Clinic Staff</h2>
-        <p style="width: 300px;">We know how large objects will acts, but things on a small scale.</p>
+        <p style="max-width: 300px;">We know how large objects will acts, but things on a small scale.</p>
         <div class="d-flex gap-2">
           <!-- TODO: Change this to link in the future -->
           <button class="btn btn-primary">Get Acquinted Now</button>

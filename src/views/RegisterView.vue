@@ -1,5 +1,8 @@
-
+<script setup>
+import NavBar from '../components/NavBar.vue'
+</script>
 <template>
+    <NavBar/>
     <div class="row justify-content-center">
       <div class="col-md-5 bordered">
           <h6>Register</h6>
