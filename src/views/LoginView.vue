@@ -14,7 +14,7 @@
             </div>
             <div class="form-group my-3 d-grid">
             <button type="submit" class="btn btn-primary">Log in</button>
-            <button type="submit" class="btn btn-outline-primary mt-2">Cancel</button>
+            
           </div>
 
 

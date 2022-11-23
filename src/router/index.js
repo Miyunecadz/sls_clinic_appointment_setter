@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import AboutView from '../views/AboutView.vue'
+import SetView from '../views/SetView.vue'
 import ServiceView from '../views/ServiceView.vue'
 
 
@@ -36,6 +37,11 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView
+    },
+    {
+      path: '/set',
+      name: 'set',
+      component: SetView
     }
     
     
