@@ -5,34 +5,104 @@ import NavBar from '../components/NavBar.vue'
 <template>
     <NavBar/>
 
-  <!-- Must change the image to high quality images -->
-  <div class="bg-image" style="background-image:url('../src/assets/p_a.jpg');">
-    <div class="container">
-      <div class="row justify-content-center" style="height:100vh">
-        <div class="col-md-5 ms-auto my-auto p-2 p-md-4">
-          <div class="card p-2">
-            dasdsa
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Must change the image to high quality images -->
-  <div class="bg-image" style="background-image:url('../src/assets/consultation.jpg');">
+  
+  <div class="bg-image" style="background-image:url('../otc.jpg');">
     <div class="container">
       <div class="row justify-content-center" style="height:100vh">
         <div class="col-md-5 me-auto my-auto p-2 p-md-4">
-          <div class="card p-2">
-            dasdsa
+          <div class="text-center">
+            <h1> Provision of OTC Medicine</h1>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  
+  <div class="bg-image" style="background-image:url('../physical assessment.jpg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 me-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+           <h1>Physical Assessment</h1> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-image" style="background-image:url('../consultations.jpg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 ms-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+            <h1>Consultation</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-image" style="background-image:url('../wound2.jpeg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 ms-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+            <h1>Wound Dressing</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-image" style="background-image:url('../medcert.jpg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 ms-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+           <h1>Medical/Health Certificate</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-image" style="background-image:url('../bptaking.jpg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 me-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+            <h1>Blood Pressure Taking</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-image" style="background-image:url('../refer.jpg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 me-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+            <h1>Referral</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-image" style="background-image:url('../caring.jpg');">
+    <div class="container">
+      <div class="row justify-content-center" style="height:100vh">
+        <div class="col-md-5 me-auto my-auto p-2 p-md-4">
+          <div class="text-center">
+           <h1>Provision of Care</h1>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- <div class="container">
+  
+<!--
+-- <div class="container">
     <div class="row justify-content-center" style="height: 80vh;">
       <div class="col-md-5 ms-md-auto my-auto p-2 p-md-4">
         <h3 class="text-center">Services</h3>
@@ -74,8 +144,9 @@ import NavBar from '../components/NavBar.vue'
           </div>
       </div> 
     </div>
-  </div> -->
+  </div> 
 
+-->
 </template>
 
 <style>

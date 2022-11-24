@@ -1,7 +1,11 @@
+<script setup>
+import NavBar from '../components/NavBar.vue'
+</script>
 
 <template>
+  <NavBar/>
   <div class="row justify-content-center">
-    <div class="col-md-5 bordered">
+    <div class="col-md-3 my-auto p-2 p-md-4 bordered">
       <form action="">
           <h6 class="text-center">Sign in your account</h6>
           <div class="form-group my-3">

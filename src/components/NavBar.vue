@@ -18,7 +18,7 @@ import {RouterLink} from 'vue-router'
           <RouterLink class="nav-link active" to="/services">Services</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link active" to="/about">About Us</RouterLink>
+          <RouterLink class="nav-link active" to="/GetAquainted">About Us</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="btn btn-primary" to="/register">

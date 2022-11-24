@@ -5,6 +5,8 @@ import RegisterView from '../views/RegisterView.vue'
 import AboutView from '../views/AboutView.vue'
 import SetView from '../views/SetView.vue'
 import ServiceView from '../views/ServiceView.vue'
+import GetAquaintedView from '../views/GetAquaintedView.vue'
+import LarnMoreView from '../views/LarnMoreView.vue'
 
 
 
@@ -42,6 +44,16 @@ const router = createRouter({
       path: '/set',
       name: 'set',
       component: SetView
+    },
+    {
+      path: '/getaquainted',
+      name: 'getaquanted',
+      component: GetAquaintedView
+    },
+    {
+      path: '/learnmore',
+      name: 'learnmore',
+      component: LarnMoreView
     }
     
     
