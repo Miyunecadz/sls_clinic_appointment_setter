@@ -61,7 +61,7 @@ import NavBar from '../components/NavBar.vue'
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="../assets/nurse attendant.jpg" class="d-block" style="max-width:580px; height:480px;" alt="">
+                <img src="../assets/nurse_attendant.jpg" class="d-block" style="max-width:580px; height:480px;" alt="">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="text-dark">Hadassah Sablayan, RN - Nursing Attendant</h5>
                 </div>
