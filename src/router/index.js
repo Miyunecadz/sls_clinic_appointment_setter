@@ -7,6 +7,7 @@ import SetView from '../views/SetView.vue'
 import ServiceView from '../views/ServiceView.vue'
 import GetAquaintedView from '../views/GetAquaintedView.vue'
 import LarnMoreView from '../views/LarnMoreView.vue'
+import DashboardView from '../views/DashboardView.vue'
 
 
 
@@ -54,6 +55,11 @@ const router = createRouter({
       path: '/learnmore',
       name: 'learnmore',
       component: LarnMoreView
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardView
     }
     
     
