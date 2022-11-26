@@ -7,7 +7,7 @@
                     <div class="d-flex justify-content-center gap-2">
                         <div class="card my-3 mx-3">
                             <!-- use @/image to locate the images -->
-                            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+                            <img src="../images/otc.jpg" class="card-img-top" alt="...">
                             <div class="card-body text-black text-center">
                                 <h6>June Vic Cadayona</h6>
                                 <span>Doctor</span>
@@ -15,7 +15,7 @@
                         </div>
                         <div class="card my-3 mx-3">
                             <!-- use @/image to locate the images -->
-                            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+                            <img src="../images/otc.jpg" class="card-img-top" alt="...">
                             <div class="card-body text-black text-center">
                                 <h6>Renee Clint Gortifacion</h6>
                                 <span>Doctor</span>
@@ -37,14 +37,14 @@
                     <div class="d-flex justify-content-center gap-2">
                         <div class="card my-3 mx-3">
                             <!-- use @/image to locate the images -->
-                            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+                            <img src="../images/otc.jpg" class="card-img-top" alt="...">
                             <div class="card-body text-black text-center">
                                 <h6>Picture of SLSU Clinit</h6>
                             </div>
                         </div>
                         <div class="card my-3 mx-3">
                             <!-- use @/image to locate the images -->
-                            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+                            <img src="../images/otc.jpg" class="card-img-top" alt="...">
                             <div class="card-body text-black text-center">
                                 <h6>Geolocation</h6>
                             </div>
