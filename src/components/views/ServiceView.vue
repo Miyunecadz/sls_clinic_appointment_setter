@@ -12,8 +12,7 @@ import 'swiper/css'
       <Swiper :slides-per-view="3" :space-between="10">
         <SwiperSlide>
           <div class="card my-3">
-            <!-- use @/image to locate the images -->
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Provision of OTC Medication</h6>
             </div>
@@ -22,7 +21,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/physical assessment.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/physical assessment.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 2</h6>
             </div>
@@ -31,7 +30,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 3</h6>
             </div>
@@ -40,7 +39,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 4</h6>
             </div>
@@ -49,7 +48,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 4</h6>
             </div>
@@ -58,7 +57,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 4</h6>
             </div>
@@ -67,7 +66,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 4</h6>
             </div>
@@ -76,7 +75,7 @@ import 'swiper/css'
 
         <SwiperSlide>
           <div class="card my-3">
-            <img src="@public/images/otc.jpg" class="card-img-top" alt="...">
+            <img src="@assets/images/otc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="text-center">Image 4</h6>
             </div>
