@@ -8,30 +8,30 @@ import {RouterLink} from 'vue-router'
 
 <div class="sidebar">
 <div class="title">
-Menu
+     Dashboard
 </div>
 <div class="menu-item">
-    <RouterLink to="/" active-class="active" tag="button"> 
-        <div class="link-container">
+    
+    <RouterLink to="/" class="btn btn-outline-none"> 
+        <div class="text-light">
         Home
 
     </div>
     </RouterLink>
 </div>
 <div class="menu-item">
-    <RouterLink to="/" active-class="active" tag="button"> 
-        <div class="link-container">
-        About
+    <RouterLink to="/set" class="btn btn-outline-none" > 
+        <div class="text-light">
+        Set Appointment
 
     </div>
     </RouterLink>
 </div>
 
 <div class="menu-item">
-    <RouterLink to="/" active-class="active" tag="button"> 
-        <div class="link-container">
-        Services
-
+    <RouterLink to="/profile" class="btn btn-outline-none"> 
+        <div class="text-light">
+            Profile
     </div>
     </RouterLink>
 </div>
@@ -40,4 +40,33 @@ Menu
 </div>
 
 </template>
+<style scoped>
+.title{
+    
+    color:white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.menu-item{
+    display:flex;
+    flex-direction:column;
+    margin-top: 10px;
+}
+.menu-item > = {
+    margin-top:30px;
+}
+.side-btn:focus{
+    outline:none;
+
+}
+
+.side-btn{
+    border:none;
+    padding: 10px 0px;
+    cursor: pointer;
+    font-size: 20px;
+    color:white;
+
+}
+</style>
 

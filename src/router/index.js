@@ -8,6 +8,8 @@ import ServiceView from '../views/ServiceView.vue'
 import GetAquaintedView from '../views/GetAquaintedView.vue'
 import LarnMoreView from '../views/LarnMoreView.vue'
 import DashboardView from '../views/DashboardView.vue'
+import ProfileView from '../views/ProfileView.vue'
+import UpdateProfileView from '../views/UpdateProfileView.vue'
 
 
 
@@ -60,6 +62,16 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: DashboardView
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView
+    },
+    {
+      path: '/updateprofile',
+      name: 'updateprofile',
+      component: UpdateProfileView
     }
     
     
