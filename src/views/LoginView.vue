@@ -1,30 +1,37 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <NavBar/>
-  <div class="row justify-content-center">
-    <div class="col-md-3 my-auto p-2 p-md-4 bordered">
-      <form action="">
+  <div class="container">
+    <div class="row justify-content-center" style="height:100vh">
+      <div class="col-md-4 my-auto">
+        <div class="row justify-content-center my-2">
+          <RouterLink class="text-center" style="max-width:35%" to="/">
+            <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" style="height:80px;max-width:110px;" alt="">
+          </RouterLink>
+        </div>
+        <form action="" class="card shadow p-4">
           <h6 class="text-center">Sign in your account</h6>
-          <div class="form-group my-3">
-            <label for="email">Email address</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="johndoe@gmail.com">
+          <div class="form-group my-2">
+            <label for="username">Username</label>
+            <input type="username" name="username" id="username" class="form-control" placeholder="slsu-clinic">
           </div>
-          <div class="form-group my-3">
+          <div class="form-group my-2">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="****">
           </div>
-          <div class="form-group my-3 d-grid">
-            
-              <button type="submit" class="btn btn-primary" to="/set">Sign in</button>
+          <div class="form-group my-2 d-grid">
+
+            <button type="submit" class="btn btn-primary" to="/set">Sign in</button>
           </div>
 
           <p class="text-center">
-            <RouterLink style="text-decoration: blue;" class="text-dark" to="/register">No account? Click here</RouterLink>
+            <RouterLink style="text-decoration: blue;" class="text-dark" to="/register">No account? Click here
+            </RouterLink>
           </p>
         </form>
+      </div>
     </div>
   </div>
 </template>

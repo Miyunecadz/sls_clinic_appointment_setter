@@ -1,7 +1,3 @@
 {
-<<<<<<< HEAD
-  "recommendations": ["svelte.svelte-vscode"]
-=======
   "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
->>>>>>> 076e992 (initial commit)
 }

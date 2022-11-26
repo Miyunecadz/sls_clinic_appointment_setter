@@ -4,16 +4,9 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import AboutView from '../views/AboutView.vue'
 import SetView from '../views/SetView.vue'
-import ServiceView from '../views/ServiceView.vue'
-import GetAquaintedView from '../views/GetAquaintedView.vue'
-import LarnMoreView from '../views/LarnMoreView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import UpdateProfileView from '../views/UpdateProfileView.vue'
-
-
-
-
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,11 +27,6 @@ const router = createRouter({
       component: RegisterView
     },
     {
-      path: '/services',
-      name: 'services',
-      component: ServiceView
-    },
-    {
       path: '/about',
       name: 'about',
       component: AboutView
@@ -47,16 +35,6 @@ const router = createRouter({
       path: '/set',
       name: 'set',
       component: SetView
-    },
-    {
-      path: '/getaquainted',
-      name: 'getaquanted',
-      component: GetAquaintedView
-    },
-    {
-      path: '/learnmore',
-      name: 'learnmore',
-      component: LarnMoreView
     },
     {
       path: '/dashboard',
