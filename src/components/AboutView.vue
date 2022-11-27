@@ -5,14 +5,21 @@
                 <div class="col-md-6 my-auto">
                     <h5 class="text-center"> Meet Our Specialist</h5>
                     <div class="d-flex justify-content-center gap-2">
-                        <div class="card my-3 mx-3" style="width: 150px">
+                        <div class="card my-3" style="width:150px;">
                             <img src="../assets/nurse.jpg"  class="card-img-top" alt="...">
                             <div class="card-body text-black text-center">
                                 <h6>Maria Emelee Bascug,RN MAN</h6>
                                 <span>Nurse II</span>
                             </div>
                         </div>
-                        <div class="card my-3 mx-3" style="width: 150px">
+                        <div class="card my-3" style="width:150px;">
+                            <img src="../assets/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body text-black text-center">
+                                <h6>Dr. Edmundo Vill, Physician</h6>
+                                <span>University Doctor</span>
+                            </div>
+                        </div>
+                        <div class="card my-3" style="width:150px;">
                             <img src="../assets/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body text-black text-center">
                                 <h6>Dr. Edmundo Vill, Physician</h6>
