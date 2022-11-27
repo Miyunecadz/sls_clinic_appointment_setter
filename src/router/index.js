@@ -51,7 +51,7 @@ const router = createRouter({
       component: UpdateProfileView
     },
     {
-      path: '/appointmenthistory',
+      path: '/appointment-history',
       name: 'appointmenthistory',
       component: AppointmentHistoryView
     }
