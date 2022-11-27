@@ -36,9 +36,11 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: DashboardView,
+      // Gawskie kung gusto ka maka sud sa dashbaord
+      // e comment rani meta kutob sa iyahang closing brace
       meta: {
         middleware: auth
-      }
+      } // kani
     },
     {
       path: '/profile',
