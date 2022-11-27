@@ -6,6 +6,7 @@ import SetView from '../views/SetView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import UpdateProfileView from '../views/UpdateProfileView.vue'
+import AppointmentHistoryView from '../views/AppointmentHistoryView.vue'
 import auth from '../middleware/auth'
 
 const router = createRouter({
@@ -48,6 +49,11 @@ const router = createRouter({
       path: '/updateprofile',
       name: 'updateprofile',
       component: UpdateProfileView
+    },
+    {
+      path: '/appointmenthistory',
+      name: 'appointmenthistory',
+      component: AppointmentHistoryView
     }
   ]
 })

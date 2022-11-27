@@ -5,68 +5,30 @@ import {RouterLink} from 'vue-router'
 
 
 <template>
-
-<div class="sidebar">
-<div class="title">
-     Dashboard
+<nav class="navbar"  nav-bar expand d-flex flex-column align-item-start id="sidebar">
+    <a href="#" class="navbar-brand text-dark mt-5">
+<div class="display-5 font-weight-bold">Menu
 </div>
-<div class="menu-item">
-    
-    <RouterLink to="/" class="btn btn-outline-none"> 
-        <div class="text-light">
-        Home
+    </a>
+    <ul class="navbar-nav d-flex flex-column mt-3 w-100">
+        <li class="nav-item w-100">
+            <RouterLink class="nav-link text-dark pl-4" to="/profile">Profile</RouterLink>
 
-    </div>
-    </RouterLink>
-</div>
-<div class="menu-item">
-    <RouterLink to="/set" class="btn btn-outline-none" > 
-        <div class="text-light">
-        Set Appointment
+        </li>
+        <li class="nav-item w-100">
+            <RouterLink class="nav-link text-dark pl-4" to="/set">Set Appointment</RouterLink>
 
-    </div>
-    </RouterLink>
-</div>
+        </li>
+        <li class="nav-item w-100">
+            <RouterLink class="nav-link text-dark pl-4" to="/AppointmentHistory">Appointment History</RouterLink>
+           
+        </li>
 
-<div class="menu-item">
-    <RouterLink to="/profile" class="btn btn-outline-none"> 
-        <div class="text-light">
-            Profile
-    </div>
-    </RouterLink>
-</div>
+    </ul>
 
-
-</div>
+</nav>
 
 </template>
-<style scoped>
-.title{
-    
-    color:white;
-    font-size: 20px;
-    margin-top: 10px;
-}
-.menu-item{
-    display:flex;
-    flex-direction:column;
-    margin-top: 10px;
-}
-.menu-item > = {
-    margin-top:30px;
-}
-.side-btn:focus{
-    outline:none;
 
-}
 
-.side-btn{
-    border:none;
-    padding: 10px 0px;
-    cursor: pointer;
-    font-size: 20px;
-    color:white;
-
-}
-</style>
 
