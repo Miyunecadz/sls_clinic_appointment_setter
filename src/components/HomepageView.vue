@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-image" style="background-image:url('../images/Homepage.jpg');">
+    <div class="bg-image" style="background-image:url('../Homepage.jpg');">
         <div class="container">
             <div class="d-flex justify-content-center" style="height: 100vh;">
                 <div class="me-auto my-auto p-2 p-md-4" style="max-width:fit-content;">
