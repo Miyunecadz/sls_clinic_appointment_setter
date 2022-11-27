@@ -1,8 +1,8 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import Sidebar from '../components/sidebar.vue'
 </script>
 <template>
-    <NavBar />
+    <Sidebar />
     <div class="row justify-content-center">
     <div class="col-md-3 my-auto p-2 p-md-4 bordered">
       <form action="">
