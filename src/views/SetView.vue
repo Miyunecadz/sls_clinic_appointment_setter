@@ -34,107 +34,32 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                 </div>
 
 
-                                <label for="appointment time">Service Time(swipe for more)</label>
+                                <label for="appointment time">Service (swipe for more)</label>
                                 <Swiper :slides-per-view="3" :space-between="10">
                                     <SwiperSlide>
                                         <SliderCardComponent title="OTC Medication" time="09:00:00" date="2022-29-1" />
+                                    
+                                    </SwiperSlide>
+                                    
+                                    <SwiperSlide>
+                                        
+                                        <SliderCardComponent title="Physical Assessment" time="11:00:00" date="2022-29-1" />
+                                        
+                                    </SwiperSlide>
+                                   
+                                    <SwiperSlide>
+                                        <SliderCardComponent title="Consultation" time="10:00:00" date="2022-30-11" />
+                                    </SwiperSlide>
+                                    
+                                    <SwiperSlide>
+                                        <SliderCardComponent title="Wound Dressing" time="11:00:00" date="2023-15-1" />
+                                    </SwiperSlide>
+                                    
+                                    <SwiperSlide>
+                                        <SliderCardComponent title="Medical-Health Cert/Referral" time="08:00:00" date="2022-16-12" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <div class="card p-2">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <h6 class="form-check-label" for="flexRadioDefault1">
-                                                Physical Assessment
-                                            </h6>
-                                            <div class="d-flex gap-3">
-                                                <span>
-                                                    11-30-2022
-                                                </span>
-                                                10:00-11:00
-                                                <span>
-
-                                                </span>
-
-                                            </div>
-
-
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="card p-2">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <h6 class="form-check-label" for="flexRadioDefault1">
-                                                Consultation
-                                            </h6>
-                                            <div class="d-flex gap-3">
-                                                <span>
-                                                    11-30-2022
-                                                </span>
-                                                8:00-10:00
-                                                <span>
-
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="card p-2">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <h6 class="form-check-label" for="flexRadioDefault1">
-                                                Wound Dressing
-                                            </h6>
-                                            <div class="d-flex gap-3">
-                                                <span>
-                                                    11-30-2022
-                                                </span>
-                                                8:00 - 11:00
-                                                <span>
-
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="card p-2">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <h6 class="form-check-label" for="flexRadioDefault1">
-                                                Medical-Health Certificate/Referral
-                                            </h6>
-                                            <div class="d-flex gap-3">
-                                                <span>
-                                                    11-30-2022
-                                                </span>
-                                                11:00-12:00
-                                                <span>
-
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="card p-2">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1" text="asasa">
-                                            <h6 class="form-check-label" for="flexRadioDefault1">
-                                                Blood Pressure Taking
-                                            </h6>
-                                            <div class="d-flex gap-3">
-                                                <span>
-                                                    12-8-2022
-                                                </span>
-                                                8:00-10:00
-                                                <span>
-
-                                                </span>
-
-                                            </div>
-                                        </div>
+                                        <SliderCardComponent title="Blood Pressure Taking" time="01:00:00" date="2022-19-12" />
                                     </SwiperSlide>
 
                                 </Swiper>
