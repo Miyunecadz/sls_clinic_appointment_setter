@@ -61,7 +61,6 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                     <SwiperSlide>
                                         <SliderCardComponent title="Blood Pressure Taking" time="01:00:00" date="2022-19-12" />
                                     </SwiperSlide>
-
                                 </Swiper>
                             </div>
 
