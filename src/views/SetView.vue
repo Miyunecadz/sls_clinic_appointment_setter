@@ -35,26 +35,26 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                 <label for="appointment time">Service (swipe for more)</label>
                                 <Swiper :slides-per-view="3" :space-between="10">
                                     <SwiperSlide>
-                                        <SliderCardComponent title="OTC Medication" time="09:00:00" date="2022-29-1" />
+                                        <SliderCardComponent title="OTC Medication" specialist="Edmundo" time="09:00:00" date="2022-29-1" />
                                     </SwiperSlide>
                                     
                                     <SwiperSlide>
-                                        <SliderCardComponent title="Physical Assessment" time="11:00:00" date="2022-29-1" />
+                                        <SliderCardComponent title="Physical Assessment" specialist="June Vic" time="11:00:00" date="2022-29-1" />
                                     </SwiperSlide>
                                    
                                     <SwiperSlide>
-                                        <SliderCardComponent title="Consultation" time="10:00:00" date="2022-30-11" />
+                                        <SliderCardComponent title="Consultation" specialist="Renee" time="10:00:00" date="2022-30-11" />
                                     </SwiperSlide>
                                     
                                     <SwiperSlide>
-                                        <SliderCardComponent title="Wound Dressing" time="11:00:00" date="2023-15-1" />
+                                        <SliderCardComponent title="Wound Dressing" specialist="Void" time="11:00:00" date="2023-15-1" />
                                     </SwiperSlide>
                                     
                                     <SwiperSlide>
-                                        <SliderCardComponent title="Medical-Health Cert/Referral" time="08:00:00" date="2022-16-12" />
+                                        <SliderCardComponent title="Medical-Health Cert/Referral" specialist="Edmundo" time="08:00:00" date="2022-16-12" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <SliderCardComponent title="Blood Pressure Taking" time="01:00:00" date="2022-19-12" />
+                                        <SliderCardComponent title="Blood Pressure Taking" specialist="Juan" time="01:00:00" date="2022-19-12" />
                                     </SwiperSlide>
                                 </Swiper>
 
