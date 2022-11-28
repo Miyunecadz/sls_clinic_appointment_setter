@@ -1,4 +1,6 @@
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
 import SidebarComponent from '../components/SidebarComponent.vue'
 </script>
 <template>
@@ -30,37 +32,62 @@ import SidebarComponent from '../components/SidebarComponent.vue'
                                 <input type="text" name="last name" id="last name" class="form-control">
                             </div>
                             
-                            <div class="form-group">
-                                <label for="appointment Type">Appointment Type</label>
-                                <select name="appointment type" id="appointment type" class="form-select">
-                                    <option value="">Select one</option>
-                                    <option value="Provision of OTC Medicine">Provision of OTC Medicine</option>
-                                    <option value="Physical  Assessment">Physical  Assessment</option>
-                                    <option value="Consultation">Consultation</option>
-                                    <option value="Wound Dressing">Wound Dressing</option>
-                                    <option value="Medical/Health Certificate">Medical/Health Certificate</option>
-                                    <option value="Blood Pressure Taking">Blood Pressure Taking</option>
-                                    <option value="Referral">Referral</option>
-                                    <option value="Provision of Comfort">Provision of Comfort</option>
-                                    <option value="Other Concerns">Other Concerns</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="appointment time">Appointment Time</label>
-                                <select name="appointment time" id="appointment time" class="form-select">
-                                    <option value="">Select one</option>
-                                    <option value="8:00 - 9:00 AM">8:00 - 9:00 AM</option>
-                                    <option value="9:00 - 10:00 AM">9:00 - 10:00 AM</option>
-                                    <option value="10:00 - 11:00 AM">10:00 - 11:00 AM</option>
-                                    <option value="11:00 - 12:00 PM">11:00 - 12:00 PM</option>
-                                    <option value="1:00 - 2:00 PM">1:00 - 2:00 PM</option>
-                                    <option value="2:00 - 3:00 PM">2:00 - 3:00 PM</option>
-                                    <option value="3:00 - 4:00 PM">3:00 - 4:00 PM</option>
-                                    <option value="4:00 - 5:00 PM">4:00 - 5:00 PM</option>
-                                    
-                                </select>
-                            </div>
-                        </div>
+                           
+                            <label for="appointment time">Service Time(swipe for more)</label>
+                            <Swiper :slides-per-view="3" :space-between="10">
+        <SwiperSlide>
+            <div class="card my-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <h6 class="form-check-label" for="flexRadioDefault1">
+    9:00-10:00AM
+  </h6>
+</div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div class="card my-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <h6 class="form-check-label" for="flexRadioDefault1">
+    10:00-11:00AM
+  </h6>
+</div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div class="card my-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <h6 class="form-check-label" for="flexRadioDefault1">
+    11:00-12:00PM
+  </h6>
+</div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div class="card my-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <h6 class="form-check-label" for="flexRadioDefault1">
+    1:00-2:00PM
+  </h6>
+</div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div class="card my-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <h6 class="form-check-label" for="flexRadioDefault1">
+    2:00-3:00PM
+  </h6>
+</div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div class="card my-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" text="asasa">
+  <h6 class="form-check-label" for="flexRadioDefault1">
+    3:00-4:00PM
+  </h6>
+</div>
+        </SwiperSlide>
+        </Swiper>
+        </div>
+        
+        
+                       
                         <div class="col-md">
                             <div class="form-group">
                                 <label for="contact number">Contact Number</label>
