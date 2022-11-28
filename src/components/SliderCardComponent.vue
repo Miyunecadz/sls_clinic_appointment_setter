@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <label class="card p-2">
+    <label class="card p-2 mx-1" style="width:230px;">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <h6 class="form-check-label mt-2" for="flexRadioDefault1">
             {{props.title}}
