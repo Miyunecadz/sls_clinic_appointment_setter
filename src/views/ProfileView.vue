@@ -15,6 +15,10 @@ const authUser = userStore.authUser
 
           </div>
           <div class="form-group my-3">
+            <label for="Status:">Status: {{authUser.status}}</label>
+
+          </div>
+          <div class="form-group my-3">
             <label for="firstname">First Name: {{authUser.first_name}}</label>
 
           </div>

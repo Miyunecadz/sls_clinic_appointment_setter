@@ -1,16 +1,16 @@
 <script setup>
-import Sidebar from '../components/Sidebar.vue'
+import SidebarComponent from '../components/SidebarComponent.vue'
 </script>
 
 
 
 <template>
-    <Sidebar/>
+    <SidebarComponent>
 
    
     <div class="container">
-        <div class="row justify-conternt center">
-            <div class="col-md-4 ">
+        <div class="row justify-content-center">
+            <div class="col-md-6 my-auto">
  
     <table class="table ">
         <h3>
@@ -48,5 +48,5 @@ import Sidebar from '../components/Sidebar.vue'
 </div>
 </div>
 </div>
-
+</SidebarComponent>
 </template>

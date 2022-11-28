@@ -1,8 +1,8 @@
 <script setup>
-import Sidebar from '../components/sidebar.vue'
+import SidebarComponent from '../components/SidebarComponent.vue'
 </script>
 <template>
-    <Sidebar/>
+    <SidebarComponent>
     <div class="container">
         <div class="row justify-content-center" style="height:80vh">
             <div class="col-md-8 my-auto">
@@ -94,4 +94,5 @@ import Sidebar from '../components/sidebar.vue'
             </div>
         </div>
     </div>
+    </SidebarComponent>
 </template>
