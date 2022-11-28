@@ -1,10 +1,11 @@
 <script setup>
-import {defineProps} from 'vue'
+import { defineProps } from 'vue'
 
 const props = defineProps({
     title: String,
     date: String,
-    time: String
+    time: String,
+    specialist: String
 })
 </script>
 
@@ -12,15 +13,17 @@ const props = defineProps({
     <label class="card p-2 mx-1" style="width:230px;">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <h6 class="form-check-label mt-2" for="flexRadioDefault1">
-            {{props.title}}
+            {{ props.title }}
         </h6>
-        <p>Doctor Jv</p>
+        <p>
+            {{ props.specialist }}
+        </p>
         <div class="d-flex">
             <span>
-                {{props.date}}
+                {{ props.date }}
             </span>
             <span class="ms-auto">
-                {{props.time}}
+                {{ props.time }}
             </span>
         </div>
     </label>
