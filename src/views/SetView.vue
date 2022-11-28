@@ -30,7 +30,7 @@ onBeforeMount(async () => {
                                 <label for="first">First Name</label>
                                 <input type="text" name="first name" id="first name" class="form-control">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group">
                                 <label for="middle name">Middle Name</label>
                                 <input type="text" name="middle name" id="middle name" class="form-control">
                             </div>
