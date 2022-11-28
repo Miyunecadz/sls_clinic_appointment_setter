@@ -18,8 +18,6 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                     <label for="id number">ID Number</label>
                                     <input type="text" name="id number" id="id number" class="form-control">
                                 </div>
-                                <div class="row gap-1">
-                                    <div class="form-group col-md">
                                         <label for="first">First Name</label>
                                         <input type="text" name="first name" id="first name" class="form-control">
                                     </div>
@@ -38,13 +36,10 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                 <Swiper :slides-per-view="3" :space-between="10">
                                     <SwiperSlide>
                                         <SliderCardComponent title="OTC Medication" time="09:00:00" date="2022-29-1" />
-                                    
                                     </SwiperSlide>
                                     
                                     <SwiperSlide>
-                                        
                                         <SliderCardComponent title="Physical Assessment" time="11:00:00" date="2022-29-1" />
-                                        
                                     </SwiperSlide>
                                    
                                     <SwiperSlide>
@@ -62,11 +57,10 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                         <SliderCardComponent title="Blood Pressure Taking" time="01:00:00" date="2022-19-12" />
                                     </SwiperSlide>
                                 </Swiper>
-                            </div>
 
 
 
-                            <div class="col-md">
+                            
                                 <div class="form-group">
                                     <label for="contact number">Contact Number</label>
                                     <input type="text" name="contact number" id="contact number" class="form-control">
@@ -84,9 +78,6 @@ import SliderCardComponent from '../components/SliderCardComponent.vue'
                                     </select>
                                 </div>
 
-                            </div>
-
-                        </div>
                         <div class="row justify-content-center">
                             <div class="col me-auto">
                                 <button type="submit" class="btn btn-primary gap-2 mt-2">Set Now</button>
