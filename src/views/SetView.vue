@@ -10,12 +10,13 @@ const schedules = ref()
 onBeforeMount(async () => {
     const response = await axios.get('http://localhost:3000/schedules/today');
     schedules.value = response.data.schedules
+    console.log(response.data.schedules)
 })
 </script>
 <template>
     <SidebarComponent>
         <div class="container">
-            <div class="row justify-content-center" style="height:80vh">
+            <div class="row justify-content-center">
                 <div class="col-md-8 my-auto">
                     <h4>Set Appointment</h4>
                     <form action="" method="post">
@@ -43,7 +44,7 @@ onBeforeMount(async () => {
                         <label for="appointment time">Service (swipe for more)</label>
                         <Swiper :slides-per-view="3" :space-between="10">
                             <SwiperSlide v-for="schedule in schedules">
-                                <SliderCardComponent :title="schedule.service_type" time="09:00:00" date="2022-29-1" />
+                                <SliderCardComponent :title="schedule.service_type" :time="schedule.time" :date="schedule.date" :specialist="schedule.specialist.first_name+' '+schedule.specialist.last_name" />
                             </SwiperSlide>
                         </Swiper>
 
