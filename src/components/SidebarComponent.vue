@@ -8,7 +8,7 @@ const userStore = useUserStore()
 
 const logout = () => {
     userStore.authUser = '';
-    router.push({name:'login'})
+    router.push({ name: 'login' })
 }
 </script>
 <template>
@@ -16,7 +16,8 @@ const logout = () => {
         <div class="row row-contain">
             <div class="column1 col-md-2 shadow">
                 <div class="image-container d-flex">
-                    <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" class="mx-auto" style="max-width: 150px;height: 100px;" />
+                    <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" class="mx-auto"
+                        style="max-width: 150px;height: 100px;" />
                 </div>
                 <h6 class="text-center mt-2 px-3">SLSU CLINIC APPOINTMENT SETTER</h6>
 
@@ -34,11 +35,9 @@ const logout = () => {
             </div>
 
             <div class="column2 col-md">
-                <div class="container">
-                    <main class="mt-4">
-                        <slot></slot>
-                    </main>
-                </div>
+                <main class="mt-3">
+                    <slot></slot>
+                </main>
             </div>
         </div>
     </div>
@@ -56,10 +55,8 @@ const logout = () => {
 
 .row-contain {
     height: 100vh;
-}
-
-.row-container {
-    overflow: hidden;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .image-container {
