@@ -36,53 +36,115 @@ import SidebarComponent from '../components/SidebarComponent.vue'
                             <label for="appointment time">Service Time(swipe for more)</label>
                             <Swiper :slides-per-view="3" :space-between="10">
         <SwiperSlide>
-            <div class="card my-3">
+            <div class="card p-2">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <h6 class="form-check-label" for="flexRadioDefault1">
-    9:00-10:00AM
+    Provision of OTC Medicine
   </h6>
+  <div class="d-flex gap-3">
+    <span>
+        12-25-2022
+    </span>
+    <span>
+        9:00-10:00
+    </span>
+
+  </div>
 </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div class="card my-3">
+            <div class="card p-2">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <h6 class="form-check-label" for="flexRadioDefault1">
-    10:00-11:00AM
-  </h6>
+    Physical Assessment
+</h6>
+<div class="d-flex gap-3">
+    <span>
+        11-30-2022
+    </span>
+        10:00-11:00
+    <span>
+
+    </span>
+
+</div>
+   
+  
 </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div class="card my-3">
+            <div class="card p-2">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <h6 class="form-check-label" for="flexRadioDefault1">
-    11:00-12:00PM
-  </h6>
+    Consultation
+</h6>
+<div class="d-flex gap-3">
+    <span>
+        11-30-2022
+    </span>
+        8:00-10:00
+    <span>
+
+    </span>
+
+</div>
 </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div class="card my-3">
+            <div class="card p-2">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <h6 class="form-check-label" for="flexRadioDefault1">
-    1:00-2:00PM
-  </h6>
+    Wound Dressing
+</h6>
+<div class="d-flex gap-3">
+    <span>
+        11-30-2022
+    </span>
+        8:00 - 11:00
+    <span>
+
+    </span>
+
+</div>
 </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div class="card my-3">
+            <div class="card p-2">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <h6 class="form-check-label" for="flexRadioDefault1">
-    2:00-3:00PM
-  </h6>
+    Medical-Health Certificate/Referral
+</h6>
+<div class="d-flex gap-3">
+    <span>
+        11-30-2022
+    </span>
+        11:00-12:00
+    <span>
+
+    </span>
+
+</div>
 </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div class="card my-3">
+            <div class="card p-2">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" text="asasa">
   <h6 class="form-check-label" for="flexRadioDefault1">
-    3:00-4:00PM
-  </h6>
+    Blood Pressure Taking
+</h6>
+<div class="d-flex gap-3">
+    <span>
+        12-8-2022
+    </span>
+        8:00-10:00
+    <span>
+
+    </span>
+
+</div>
 </div>
         </SwiperSlide>
+ 
         </Swiper>
         </div>
         

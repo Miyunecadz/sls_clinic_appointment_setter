@@ -7,6 +7,7 @@ const authUser = userStore.authUser
 
 <template>
     <Sidebar> 
+       
         <div class="row justify-content-center">
       <div class="col-md-3 my-auto p-2 p-md-4 ">
         <h3>
