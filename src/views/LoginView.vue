@@ -1,5 +1,40 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { ref } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+import { useUserStore } from '@/stores/user.js'
+
+const router = useRouter()
+const userStore = useUserStore()
+const userInput = ref({
+  username: '',
+  password: ''
+})
+
+const loginUser = async () => {
+  const url = 'http://localhost:3000/auth/login'
+  const response = await userStore.save(url, userInput.value)
+
+  if (!response.result) {
+
+    userInput.value = {
+        password: ''
+    }
+
+    return Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: response.message,
+    })
+  }
+
+  userInput.value = {
+      username: '',
+      password: ''
+    }
+
+  return router.push('/dashboard')
+}
+
 </script>
 
 <template>
@@ -8,22 +43,23 @@ import { RouterLink } from 'vue-router';
       <div class="col-md-4 my-auto">
         <div class="row justify-content-center my-2">
           <RouterLink class="text-center" style="max-width:35%" to="/">
-            <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" style="height:80px;max-width:110px;" alt="">
+            <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" style="height:80px;max-width:110px;"
+              alt="" />
           </RouterLink>
         </div>
         <form action="" class="card shadow p-4">
           <h6 class="text-center">Sign in your account</h6>
           <div class="form-group my-2">
             <label for="username">Username</label>
-            <input type="username" name="username" id="username" class="form-control" placeholder="slsu-clinic">
+            <input v-model="userInput.username" type="username" name="username" id="username" class="form-control" placeholder="slsu-clinic">
           </div>
           <div class="form-group my-2">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" placeholder="****">
+            <input v-model="userInput.password" type="password" name="password" id="password" class="form-control" placeholder="****">
           </div>
           <div class="form-group my-2 d-grid">
 
-            <button type="submit" class="btn btn-primary" to="/set">Sign in</button>
+            <button @click.prevent="loginUser" type="submit" class="btn btn-primary" to="/set">Sign in</button>
           </div>
 
           <p class="text-center">

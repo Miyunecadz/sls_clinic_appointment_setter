@@ -46,7 +46,8 @@ async function createUser() {
         })
     }
 
-    const response = await userStore.create(userInput.value)
+    const url = 'http://localhost:3000/patients'
+    const response = await userStore.save(url,userInput.value)
 
     if(!response.result)
     {
