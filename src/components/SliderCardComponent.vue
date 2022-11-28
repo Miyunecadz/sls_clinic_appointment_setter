@@ -14,11 +14,12 @@ const props = defineProps({
         <h6 class="form-check-label mt-2" for="flexRadioDefault1">
             {{props.title}}
         </h6>
-        <div class="d-flex gap-3">
+        <p>Doctor Jv</p>
+        <div class="d-flex">
             <span>
                 {{props.date}}
             </span>
-            <span>
+            <span class="ms-auto">
                 {{props.time}}
             </span>
         </div>
