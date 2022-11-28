@@ -8,12 +8,12 @@ export const useUserStore = defineStore('user', {
     },
 
     actions: {
-        async save(url,user) {
+        async save(url, user) {
             let response = await axios.post(url, user)
-            this.authUser=response.data.user
+            this.authUser = response.data.user
             return response.data
         },
-        
+
     },
     persist: true,
 })
