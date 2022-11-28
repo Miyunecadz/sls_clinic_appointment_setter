@@ -17,7 +17,7 @@ const loginUser = async () => {
   if (!response.result) {
 
     userInput.value = {
-        password: ''
+      password: ''
     }
 
     return Swal.fire({
@@ -28,9 +28,9 @@ const loginUser = async () => {
   }
 
   userInput.value = {
-      username: '',
-      password: ''
-    }
+    username: '',
+    password: ''
+  }
 
   return router.push('/dashboard')
 }
@@ -51,11 +51,13 @@ const loginUser = async () => {
           <h6 class="text-center">Sign in your account</h6>
           <div class="form-group my-2">
             <label for="username">Username</label>
-            <input v-model="userInput.username" type="username" name="username" id="username" class="form-control" placeholder="slsu-clinic">
+            <input v-model="userInput.username" type="username" name="username" id="username" class="form-control"
+              placeholder="slsu-clinic">
           </div>
           <div class="form-group my-2">
             <label for="password">Password</label>
-            <input v-model="userInput.password" type="password" name="password" id="password" class="form-control" placeholder="****">
+            <input v-model="userInput.password" type="password" name="password" id="password" class="form-control"
+              placeholder="****">
           </div>
           <div class="form-group my-2 d-grid">
 
