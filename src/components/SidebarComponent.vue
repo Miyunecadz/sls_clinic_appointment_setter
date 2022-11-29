@@ -14,7 +14,7 @@ const logout = () => {
 <template>
     <div class="row-container">
         <div class="row row-contain">
-            <div class="column1 col-md-2 shadow">
+            <div class="column1 col-md shadow">
                 <div class="image-container d-flex">
                     <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" class="mx-auto"
                         style="max-width: 150px;height: 100px;" />
@@ -34,7 +34,7 @@ const logout = () => {
                 </div>
             </div>
 
-            <div class="column2 col-md">
+            <div class="column2 col-md-10">
                 <main class="mt-3">
                     <slot></slot>
                 </main>

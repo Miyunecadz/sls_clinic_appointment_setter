@@ -69,7 +69,7 @@ const setAppointment = async () => {
 <template>
     <SidebarComponent>
         <div class="row justify-content-center"
-            style="margin-left:0px;margin-right:0px;margin-top:20px;margin-bottom:20px;">
+            style="margin-left:0px;margin-right:0px;margin-top:10px;margin-bottom:10px;">
             <div class="col-md-8 my-auto">
                 <h4>Set Appointment</h4>
                 <form action="" method="post">
