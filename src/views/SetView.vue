@@ -37,6 +37,23 @@ const setAppointment = async () => {
         email: inputData.value.email,
         gender: inputData.value.gender,
     }
+
+    if (
+        !inputData.value.first_name ||
+        !inputData.value.middle_name ||
+        !inputData.value.last_name ||
+        !inputData.value.service_id ||
+        !inputData.value.contact_number ||
+        !inputData.value.email ||
+        !inputData.value.gender
+        
+    ) {
+        return Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please fill up the required fields',
+        })
+    }
     let response = await axios.post('http://localhost:3000/appointments', request);
     response = await response.data
     if (!response.result) {
