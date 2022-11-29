@@ -93,22 +93,26 @@ const setAppointment = async () => {
                     <div class="row">
                         <div class="col-md">
                             <div>
-                                <label for="first">First Name</label>
+                                <label for="first">First Name <span
+                                            class="text-danger">*</span></label>
                                 <input v-model="inputData.first_name" type="text" name="first name" id="first name"
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="middle name">Middle Name</label>
+                                <label for="middle name">Middle Name <span
+                                            class="text-danger">*</span></label>
                                 <input v-model="inputData.middle_name" type="text" name="middle name" id="middle name"
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="last name">Last Name</label>
+                                <label for="last name">Last Name <span
+                                            class="text-danger">*</span></label>
                                 <input v-model="inputData.last_name" type="text" name="last name" id="last name"
                                     class="form-control">
                             </div>
 
-                            <label for="appointment time">Service (swipe for more)</label>
+                            <label for="appointment time">Service<span
+                                            class="text-danger">*</span> (swipe for more)</label>
                             <Swiper :slides-per-view="3" :space-between="10">
                                 <SwiperSlide v-for="schedule in schedules">
                                     <SliderCardComponent v-model:service="inputData.service_id" :value="schedule.id"
@@ -118,17 +122,20 @@ const setAppointment = async () => {
                             </Swiper>
 
                             <div class="form-group">
-                                <label for="contact number">Contact Number</label>
+                                <label for="contact number">Contact Number <span
+                                            class="text-danger">*</span></label>
                                 <input v-model="inputData.contact_number" type="text" name="contact number"
                                     id="contact number" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="email address">Email Address</label>
+                                <label for="email address">Email Address <span
+                                            class="text-danger">*</span></label>
                                 <input v-model="inputData.email" type="text" name="email address" id="email address"
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="gender">Gender</label>
+                                <label for="gender">Gender <span
+                                            class="text-danger">*</span></label>
                                 <select name="gender" id="gender" class="form-select" v-model="inputData.gender">
                                     <option value="">Select one</option>
                                     <option value="male">Male</option>
