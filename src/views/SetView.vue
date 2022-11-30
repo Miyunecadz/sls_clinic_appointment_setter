@@ -115,7 +115,7 @@ const setAppointment = async () => {
                                             class="text-danger">*</span> (swipe for more)</label>
                             <Swiper :slides-per-view="3" :space-between="10">
                                 <SwiperSlide v-for="schedule in schedules">
-                                    <SliderCardComponent v-model:service="inputData.service_id" :value="schedule.id"
+                                    <SliderCardComponent :active="true" v-model:service="inputData.service_id" :value="schedule.id"
                                         :title="schedule.service_type" :time="schedule.time" :date="schedule.date"
                                         :specialist="schedule.specialist.first_name + ' ' + schedule.specialist.last_name" />
                                 </SwiperSlide>
