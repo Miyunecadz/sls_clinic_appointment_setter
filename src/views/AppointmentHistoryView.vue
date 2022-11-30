@@ -36,18 +36,20 @@ onBeforeMount(async () => {
                 <th scope="col">Time</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
-              </tr>
-              <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>
-        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              
+    
+    </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr v-for="appointment in appointments">
+                <td>{{appointment.schedule.service_type}}</td>
+                <td>{{appointment.schedule.date}}</td>
+                <td>{{appointment.schedule.time}}</td>
+                <td>{{appointment.status}}</td>
+                <td>
+                  <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
  View Details
 </button>
-
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -57,56 +59,48 @@ onBeforeMount(async () => {
       </div>
       <div class="modal-body">
         <div class="form-group my-3">
-            <label for="id number">First Name: </label>
+            <label for="firstname">First Name: {{appointment.first_name}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Middle Name: </label>
+            <label for="firstname">Middle Name: {{appointment.middle_name}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Last Name: </label>
+            <label for="firstname">Last Name: {{appointment.last_name}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Service Type: </label>
+            <label for="firstname">Service Type: {{appointment.schedule.service_type}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Service Date: </label>
+            <label for="firstname">Service Time: {{appointment.schedule.time}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Service Time: </label>
+            <label for="firstname">Service Date: {{appointment.schedule.date}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Contact Number: </label>
+            <label for="firstname">Contact Number: {{appointment.contact_number}}</label>
 
           </div>
           <div class="form-group my-3">
-            <label for="Status:">Email: </label>
+            <label for="firstname">Email: {{appointment.email}}</label>
 
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    
+        
       </div>
+     
     </div>
   </div>
 </div>
 
-      </td>
-    </tr>
-            </thead>
-            <tbody class="table-group-divider">
-              <tr v-for="appointment in appointments">
-                <td>{{appointment.schedule.service_type}}</td>
-                <td>{{appointment.schedule.date}}</td>
-                <td>{{appointment.schedule.time}}</td>
-                <td>{{appointment.status}}</td>
-                <td>c</td>
+                </td>
               </tr>
             </tbody>
           </table>
