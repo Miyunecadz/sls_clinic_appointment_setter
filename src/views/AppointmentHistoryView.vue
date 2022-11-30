@@ -1,6 +1,22 @@
 <script setup>
 import SidebarComponent from '../components/SidebarComponent.vue'
+import { useUserStore } from '@/stores/user'
+import { ref, onBeforeMount } from 'vue'
+import axios from 'axios'
 
+const userStore = useUserStore().authUser
+const appointments = ref({})
+const getAppointments = async() => {
+  const response = await axios.post('http://localhost:3000/appointments/my-appointments', {
+    "userId": userStore.id
+  });
+  appointments.value = response.data.appointments
+  console.log(response.data.appointments)
+}
+
+onBeforeMount(async () => {
+  await getAppointments()
+})
 </script>
 
 
@@ -15,7 +31,7 @@ import SidebarComponent from '../components/SidebarComponent.vue'
           <table class="table ">
             <thead>
               <tr>
-                <th scope="col">Appointment ID</th>
+                <th scope="col">Appointment Title</th>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
                 <th scope="col">Status</th>
@@ -23,25 +39,11 @@ import SidebarComponent from '../components/SidebarComponent.vue'
               </tr>
             </thead>
             <tbody class="table-group-divider">
-              <tr>
-                <th scope="row">1</th>
-                <td>a</td>
-                <td>b</td>
-                <td>c</td>
-                <td>c</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>d</td>
-                <td>e</td>
-                <td>f</td>
-                <td>c</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>g</td>
-                <td>h</td>
-                <td>i</td>
+              <tr v-for="appointment in appointments">
+                <td>{{appointment.schedule.service_type}}</td>
+                <td>{{appointment.schedule.date}}</td>
+                <td>{{appointment.schedule.time}}</td>
+                <td>{{appointment.status}}</td>
                 <td>c</td>
               </tr>
             </tbody>
