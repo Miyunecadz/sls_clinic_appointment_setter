@@ -7,6 +7,7 @@ const props = defineProps({
     time: String,
     specialist: String,
     value: String,
+    active: Boolean
 })
 
 defineEmits(['update:service'])
@@ -14,7 +15,7 @@ defineEmits(['update:service'])
 
 <template>
     <label class="card p-2 mx-1" style="width:230px;">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" :value="props.value" @input="$emit('update:service', $event.target.value)">
+        <input v-if="active == true" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" :value="props.value" @input="$emit('update:service', $event.target.value)">
         <h6 class="form-check-label mt-2" for="flexRadioDefault1">
             {{ props.title }}
         </h6>

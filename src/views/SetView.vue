@@ -6,7 +6,8 @@ import SidebarComponent from '../components/SidebarComponent.vue'
 import SliderCardComponent from '../components/SliderCardComponent.vue'
 import axios from 'axios'
 import { useUserStore } from '@/stores/user'
-const schedules = ref()
+const schedules = ref("")
+const count = ref(0);
 const inputData = ref({
     first_name: '',
     middle_name: '',
@@ -21,8 +22,9 @@ const userStore = useUserStore().authUser
 const getSchedules = async () => {
     const response = await axios.get('http://localhost:3000/schedules/today');
     schedules.value = response.data.schedules
+    count.value = schedules.value.length
 }
-onBeforeMount(async () => {
+onBeforeMount(async () => {    
     await getSchedules()
 })
 
@@ -40,7 +42,6 @@ const setAppointment = async () => {
 
     if (
         !inputData.value.first_name ||
-        !inputData.value.middle_name ||
         !inputData.value.last_name ||
         !inputData.value.service_id ||
         !inputData.value.contact_number ||
@@ -118,6 +119,11 @@ const setAppointment = async () => {
                                     <SliderCardComponent v-model:service="inputData.service_id" :value="schedule.id"
                                         :title="schedule.service_type" :time="schedule.time" :date="schedule.date"
                                         :specialist="schedule.specialist.first_name + ' ' + schedule.specialist.last_name" />
+                                </SwiperSlide>
+
+                                
+                                <SwiperSlide v-if="count == 0">
+                                    <SliderCardComponent title="No Available Schedules for Today" active="false" />
                                 </SwiperSlide>
                             </Swiper>
 
