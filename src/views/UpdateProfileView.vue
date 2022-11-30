@@ -1,9 +1,10 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import Sidebar from '../components/SidebarComponent.vue'
 </script>
 
 <template>
-  <NavBar/>
+  <Sidebar>
+
   <div class="container">
         <div class="row justify-content-center" style="height:80vh">
             <div class="col-md-8 my-auto">
@@ -69,4 +70,5 @@ import NavBar from '../components/NavBar.vue'
             </div>
         </div>
     </div>
+  </Sidebar>
 </template>

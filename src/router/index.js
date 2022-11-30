@@ -30,7 +30,10 @@ const router = createRouter({
     {
       path: '/set',
       name: 'set',
-      component: SetView
+      component: SetView,
+      meta: {
+        middleware: auth
+      } 
     },
     {
       path: '/dashboard',
@@ -45,17 +48,26 @@ const router = createRouter({
     {
       path: '/profile',
       name: 'profile',
-      component: ProfileView
+      component: ProfileView,
+      meta: {
+        middleware: auth
+      } // kani
     },
     {
       path: '/updateprofile',
       name: 'updateprofile',
-      component: UpdateProfileView
+      component: UpdateProfileView,
+      meta: {
+        middleware: auth
+      } // kani
     },
     {
       path: '/appointment-history',
       name: 'appointmenthistory',
-      component: AppointmentHistoryView
+      component: AppointmentHistoryView,
+      meta: {
+        middleware: auth
+      } // kani
     }
   ]
 })
