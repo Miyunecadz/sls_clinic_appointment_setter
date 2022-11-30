@@ -123,7 +123,7 @@ const setAppointment = async () => {
 
                                 
                                 <SwiperSlide v-if="count == 0">
-                                    <SliderCardComponent title="No Available Schedules for Today" active="false" />
+                                    <SliderCardComponent title="No Available Schedules" active="false" />
                                 </SwiperSlide>
                             </Swiper>
 
