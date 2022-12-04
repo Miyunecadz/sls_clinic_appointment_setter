@@ -28,7 +28,6 @@ const loginUser = async () => {
   }
 
   userInput.value = {
-    username: '',
     password: ''
   }
 
