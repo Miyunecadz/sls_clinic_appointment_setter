@@ -9,7 +9,10 @@ const goto = (elementName) => {
 <template>
 <nav class="navbar navbar-expand-lg bg-light p-3 sticky shadow">
   <div class="container">
-    <RouterLink class="navbar-brand" style="font-weight: bold;" to="/">SLSU Medical Clinic</RouterLink>
+    <RouterLink class="navbar-brand" style="font-weight: bold;" to="/">
+      <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" alt="" />
+      SLSU Medical Clinic
+      </RouterLink>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,11 +38,16 @@ const goto = (elementName) => {
 </nav>
 </template>
 
-<style>
+<style scoped>
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+img {
+  height:50px;
+  max-width:50px;
 }
 </style>

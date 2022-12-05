@@ -5,6 +5,7 @@ import { useUserStore } from '@/stores/user.js'
 
 const router = useRouter()
 const userStore = useUserStore()
+const onLoadState = ref(false)
 const userInput = ref({
     id_number: '',
     status: '',
@@ -20,7 +21,9 @@ const userInput = ref({
 })
 
 async function createUser() {
+    onLoadState.value = true
     if (userInput.value.password != userInput.value.confirm_password) {
+        onLoadState.value = false
         return Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -39,6 +42,7 @@ async function createUser() {
         !userInput.value.email ||
         !userInput.value.password
     ) {
+        onLoadState.value = false
         return Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -47,10 +51,10 @@ async function createUser() {
     }
 
     const url = 'http://localhost:3000/patients'
-    const response = await userStore.save(url,userInput.value)
+    const response = await userStore.save(url, userInput.value)
 
-    if(!response.result)
-    {
+    if (!response.result) {
+        onLoadState.value = false
         return Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -72,11 +76,6 @@ async function createUser() {
         confirm_password: '',
     }
 
-    Swal.fire({
-            icon: 'success',
-            title: 'Great!',
-            text: response.message,
-    })
     return router.push('/dashboard')
 }
 
@@ -179,7 +178,13 @@ const nextPage = () => {
                                 <div class="form-group d-grid mt-2">
                                     <button @click="next = true" type="button"
                                         class="btn btn-secondary my-1">Back</button>
-                                    <button type="submit" class="btn btn-primary my-1">Register</button>
+                                    <button :class="onLoadState ? 'disabled' : ''" type="submit" class="btn btn-primary my-1">
+                                        <div v-if="onLoadState" class="spinner-border text-light" role="status"
+                                            style="max-height:20px;max-width:20px">
+                                            <span class="visually-hidden">...</span>
+                                        </div>
+                                        {{ onLoad ? 'Registering...' : 'Register' }}
+                                    </button>
                                 </div>
                             </div>
                             <div class="mt-2 text-center">

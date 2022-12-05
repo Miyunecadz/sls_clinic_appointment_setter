@@ -4,6 +4,7 @@ import { RouterLink, useRouter } from 'vue-router';
 import { useUserStore } from '@/stores/user.js'
 
 const router = useRouter()
+const onLoad = ref(false)
 const userStore = useUserStore()
 const userInput = ref({
   username: '',
@@ -11,6 +12,7 @@ const userInput = ref({
 })
 
 const loginUser = async () => {
+  onLoad.value = true
   const url = 'http://localhost:3000/auth/login'
   const response = await userStore.save(url, userInput.value)
 
@@ -19,12 +21,13 @@ const loginUser = async () => {
     userInput.value = {
       password: ''
     }
-
+    onLoad.value = false
     return Swal.fire({
       icon: 'error',
       title: 'Oops...',
       text: response.message,
     })
+
   }
 
   userInput.value = {
@@ -60,7 +63,12 @@ const loginUser = async () => {
           </div>
           <div class="form-group my-2 d-grid">
 
-            <button @click.prevent="loginUser" type="submit" class="btn btn-primary" to="/set">Sign in</button>
+            <button :class="onLoad ? 'disabled': ''" @click.prevent="loginUser" type="submit" class="btn btn-primary" to="/set">
+              <div v-if="onLoad" class="spinner-border text-light" role="status" style="max-height:20px;max-width:20px">
+                <span class="visually-hidden">...</span>
+              </div>
+              <span>{{onLoad ? 'Logging In...': 'Login'}}</span>
+            </button>
           </div>
 
           <p class="text-center">
