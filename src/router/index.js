@@ -7,6 +7,11 @@ import DashboardView from '../views/DashboardView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import UpdateProfileView from '../views/UpdateProfileView.vue'
 import AppointmentHistoryView from '../views/AppointmentHistoryView.vue'
+import SpecialistDashboardView from '../views/SpecialistDashboardView.vue'
+import SpecialistSetScheduleView from '../views/SpecialistSetScheduleView.vue'
+import SpecialistAppointmentView from '../views/SpecialistAppointmentView.vue'
+
+
 import auth from '../middleware/auth'
 
 const router = createRouter({
@@ -68,7 +73,33 @@ const router = createRouter({
       meta: {
         middleware: auth
       } // kani
+    },
+    {
+      path: '/specialistdashboard',
+      name: 'specialistdashboard',
+      component: SpecialistDashboardView,
+      meta: {
+        middleware: auth
+      } // kani
+    },
+    {
+      path: '/specialistsetschedule',
+      name: 'specialistsetschedule',
+      component: SpecialistSetScheduleView,
+      meta: {
+        middleware: auth
+      } // kani
+    },
+    {
+      path: '/specialistappointment',
+      name: 'specialistappoinment',
+      component: SpecialistAppointmentView,
+      meta: {
+        middleware: auth
+      } // kani
     }
+    
+
   ]
 })
 
