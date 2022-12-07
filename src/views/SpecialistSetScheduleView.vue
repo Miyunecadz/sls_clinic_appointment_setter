@@ -32,11 +32,14 @@ const authUser = userStore.authUser
                                 <input type="text" name="last name" id="last name" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="gender">Service Type</label>
-                                <select name="gender" id="gender" class="form-select">
-                                    <option value="">Select one</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                <label for="service">Service Type</label>
+                                <select name="service" id="service" class="form-select">
+                                    <option value="">Select</option>
+                                    <option value="otc">Otc Medication</option>
+                                    <option value="wound">Wound Dressing</option>
+                                    <option value="Consultation">Consultation</option>
+                                    <option value="cert">Medical/Health Certificate</option>
+                                    <option value="bp">Blood Pressure Taking</option>
                                 </select>
                             </div>
                             
