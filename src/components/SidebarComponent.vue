@@ -13,8 +13,8 @@ const logout = () => {
 </script>
 <template>
     <div class="row-container">
-        <div class="row row-contain">
-            <div class="column1 col-md shadow">
+        <div class="d-flex row-contain">
+            <div class="column1 shadow sidebar__container">
                 <div class="image-container d-flex">
                     <img src="https://user.southernleyte.org.ph/files/slsu-logo.png" class="mx-auto"
                         style="max-width: 150px;height: 100px;" />
@@ -34,16 +34,22 @@ const logout = () => {
                 </div>
             </div>
 
-            <div class="column2 col-md-10">
-                <main class="mt-3">
-                    <slot></slot>
-                </main>
+            <div class="column2 slot__container mt-3">
+                <slot></slot>
             </div>
         </div>
     </div>
 </template>
 
 <style>
+.sidebar__container {
+    max-width: 220px;
+}
+
+.slot__container {
+    width: 100%;
+}
+
 .column1,
 .column2 {
     padding: 0px !important;

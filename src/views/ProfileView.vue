@@ -6,7 +6,7 @@ const authUser = userStore.authUser
 </script>
 <template>
   <Sidebar>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin: 0 0">
       <div class="col-md-3 my-auto p-2 p-md-4 bordered">
         <form action="">
           <h6 class="text-center">Your Profile</h6>

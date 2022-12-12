@@ -48,7 +48,7 @@ const router = createRouter({
       // e comment rani meta kutob sa iyahang closing brace
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/profile',
@@ -56,47 +56,47 @@ const router = createRouter({
       component: ProfileView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/updateprofile',
-      name: 'updateprofile',
+      name: 'update-profile',
       component: UpdateProfileView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/appointment-history',
-      name: 'appointmenthistory',
+      name: 'appointment-history',
       component: AppointmentHistoryView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
-      path: '/specialistdashboard',
-      name: 'specialistdashboard',
+      path: '/specialist-dashboard',
+      name: 'specialist-dashboard',
       component: SpecialistDashboardView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
-      path: '/specialistsetschedule',
-      name: 'specialistsetschedule',
+      path: '/specialist-setschedule',
+      name: 'specialist-setschedule',
       component: SpecialistSetScheduleView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
-      path: '/specialistappointment',
-      name: 'specialistappoinment',
+      path: '/specialist-appointment',
+      name: 'specialist-appoinment',
       component: SpecialistAppointmentView,
       meta: {
         middleware: auth
-      } // kani
+      } 
     }
     
 
