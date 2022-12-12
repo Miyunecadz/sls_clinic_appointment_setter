@@ -10,7 +10,9 @@ import AppointmentHistoryView from '../views/AppointmentHistoryView.vue'
 import SpecialistDashboardView from '../views/SpecialistDashboardView.vue'
 import SpecialistSetScheduleView from '../views/SpecialistSetScheduleView.vue'
 import SpecialistAppointmentView from '../views/SpecialistAppointmentView.vue'
-
+import AdminDashboardView from '../views/AdminDashboardView.vue'
+import AdminAddSpecialistView from '../views/AdminAddSpecialistView.vue'
+import AdminManageSpecialistView from '../views/AdminManageSpecialistView.vue'
 
 import auth from '../middleware/auth'
 
@@ -94,6 +96,30 @@ const router = createRouter({
       path: '/specialistappointment',
       name: 'specialistappoinment',
       component: SpecialistAppointmentView,
+      meta: {
+        middleware: auth
+      } // kani
+    },
+    {
+      path: '/admindashboard',
+      name: 'admindashboard',
+      component: AdminDashboardView,
+      meta: {
+        middleware: auth
+      } // kani
+    },
+    {
+      path: '/adminaddspecialist',
+      name: 'adminaddspecialist',
+      component: AdminAddSpecialistView,
+      meta: {
+        middleware: auth
+      } // kani
+    },
+    {
+      path: '/adminmanagespecialist',
+      name: 'adminmanagespecialist',
+      component: AdminManageSpecialistView,
       meta: {
         middleware: auth
       } // kani
