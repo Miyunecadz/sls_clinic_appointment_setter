@@ -11,8 +11,10 @@ const authUser = userStore.authUser
         <div class="row justify-content-center">
       <div class="col-md-3 my-auto p-2 p-md-4 ">
         <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
-  <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+            <form class="d-flex" role="search">
+      <input class="form-control me-2 my-auto p-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 </div>
         <div class="card">
             
@@ -22,7 +24,7 @@ const authUser = userStore.authUser
     <p class="card-text">Specialist 1 - Name</p>
     <h5 class="card-title">Specialist 2</h5>
     <p class="card-text">Specialist 2 - Name</p>
-    <RouterLink class="btn btn-success" to="/adminaddspecialist">Add Specialist</RouterLink>
+    <RouterLink class="btn btn-success" to="/admin-add-specialist">Add Specialist</RouterLink>
   </div>
 </div>
        

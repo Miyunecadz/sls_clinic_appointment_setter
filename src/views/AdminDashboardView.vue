@@ -16,14 +16,14 @@ const authUser = userStore.authUser
        </h4>
         
         <div class="card col-md-4 my-4 card text-bg-success mb-3" style="width: 21rem;">
-  <ul class="list-group list-group-flush">
+            <div class="card-header bg-transparent border-success">SUMMARY</div>
+            <ul class="list-group list-group-flush">
+
     <li class="list-group-item">Number of Students:</li>
     <li class="list-group-item">Appointments Set:</li>
     <li class="list-group-item">Available Sechdules:</li>
   </ul>
-  <div class="card-footer">
-    Summary
-  </div>
+ 
 </div>
        
     

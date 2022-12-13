@@ -101,8 +101,8 @@ const router = createRouter({
       } // kani
     },
     {
-      path: '/admind-ashboard',
-      name: 'admind-ashboard',
+      path: '/admin-dashboard',
+      name: 'admin-dashboard',
       component: AdminDashboardView,
       meta: {
         middleware: auth
