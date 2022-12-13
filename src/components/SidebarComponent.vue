@@ -2,9 +2,15 @@
 import { RouterLink, useRouter } from 'vue-router';
 import LinkComponent from './SidebarLinkComponent.vue';
 import { useUserStore } from '@/stores/user.js'
+import { onBeforeMount,ref } from 'vue';
 
 const router = useRouter()
 const userStore = useUserStore()
+const userAccountType = ref(1)
+
+onBeforeMount(() => {
+    userAccountType.value = userStore.authUser.account_type
+})
 
 const logout = () => {
     userStore.authUser = '';
@@ -26,8 +32,20 @@ const logout = () => {
                 </div>
 
                 <LinkComponent link="/profile" title="Profile" />
-                <LinkComponent link="/set" title="Set Appointment" />
-                <LinkComponent link="/appointment-history" title="Appointment History" />
+
+                <div v-if="userAccountType == 1">
+                    <!-- Add dinhi ang mga links sa admin -->
+                </div>
+
+                <div v-if="userAccountType == 2">
+                    <!-- Add dinhi ang mga links sa specialist -->
+                </div>
+
+                <div v-if="userAccountType == 3">
+                    <!--Add dinhi ang mga links sa patient-->
+                    <LinkComponent link="/set" title="Set Appointment" />
+                    <LinkComponent link="/appointment-history" title="Appointment History" />    
+                </div>
 
                 <div class="mt-4 mx-5">
                     <a href="javascript:void(0)" @click="logout" style="text-decoration:none;width:100%;">Logout</a>

@@ -62,7 +62,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/updateprofile',
+      path: '/update-profile',
       name: 'update-profile',
       component: UpdateProfileView,
       meta: {
@@ -118,16 +118,16 @@ const router = createRouter({
       } // kani
     },
     {
-      path: '/adminmanage-specialist',
-      name: 'adminmanage-specialist',
+      path: '/admin-manage-specialist',
+      name: 'admin-manage-specialist',
       component: AdminManageSpecialistView,
       meta: {
         middleware: auth
       } // kani
     },
     {
-      path: '/adminedit-specialist',
-      name: 'adminmedit-specialist',
+      path: '/admin-edit-specialist',
+      name: 'admin-edit-specialist',
       component: AdminEditSpecialistView,
       meta: {
         middleware: auth
