@@ -8,29 +8,52 @@ const authUser = userStore.authUser
 <template>
     <AdminSidebar> 
        
+        <div class="container">
+        
         <div class="row justify-content-center">
-      <div class="col-md-3 my-auto p-2 p-md-4 ">
-        <div class="input-group mb-3">
-            <form class="d-flex" role="search">
-      <input class="form-control me-2 my-auto p-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-</div>
-        <div class="card">
-            
-  <h5 class="card-header">List of Specialist </h5>
-  <div class="card-body">
-    <h5 class="card-title">Specialist 1</h5>
-    <p class="card-text">Specialist 1 - Name</p>
-    <h5 class="card-title">Specialist 2</h5>
-    <p class="card-text">Specialist 2 - Name</p>
-    <RouterLink class="btn btn-success" to="/admin-add-specialist">Add Specialist</RouterLink>
+          <div class="col-md-6 my-4">
+            <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="button-addon2">
+    <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
   </div>
+            <h3>Manage Specialists</h3>
+            <div class="col md-4 me-auto">
+                              <RouterLink to="/admin-add-specialist" class="btn btn-success">Add Specialist</RouterLink>
+                         
+                    </div>
+            <table class="table ">
+              <thead>
+                <tr>
+                  <th scope="col">Specialist Name</th>
+                  
+                  <th scope="col">Action</th>
+  
+  
+                </tr>
+              </thead>
+              <tbody class="table-group-divider">
+               
+                  <td>Name</td>
+                 
+                  
+                  <td>
+                    <div class="btn-group" role="group" aria-label="action">
+  <RouterLink to="/adminedit-specialist" class="btn btn-warning">Edit Specialist</RouterLink>
+
+  <button type="delete" class="btn btn-danger">Delete Specialist</button>
 </div>
-       
-    
-       </div>
-       </div>
+                    
+                  </td>
+              
+                  
+                   
+                  
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </AdminSidebar>
 
 </template>

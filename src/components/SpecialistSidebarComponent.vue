@@ -22,11 +22,11 @@ const logout = () => {
                 <h6 class="text-center mt-2 px-3">SLSU CLINIC APPOINTMENT SETTER</h6>
 
                 <div class="mt-4 mx-5">
-                    <router-link to="/specialistdashboard" style="text-decoration:none; width:100%;">Dashboard</router-link>
+                    <router-link to="/specialist-dashboard" style="text-decoration:none; width:100%;">Dashboard</router-link>
                 </div>
 
-                <LinkComponent link="/specialistsetschedule" title="Set Schedule" />
-                <LinkComponent link="/specialistappointment" title="View Appointments" />
+                <LinkComponent link="/specialist-setschedule" title="Set Schedule" />
+                <LinkComponent link="/specialist-appointment" title="View Appointments" />
                
 
                 <div class="mt-4 mx-5">
