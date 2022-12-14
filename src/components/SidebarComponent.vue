@@ -33,31 +33,24 @@ const logout = () => {
 
                 <LinkComponent link="/profile" title="Profile" />
 
-                <div v-if="userAccountType == 1">
+                <div v-if="userAccountType ">
                     <!-- Add dinhi ang mga links sa admin -->
-                    <LinkComponent link="/admin-dashboard" title="Dashboard" />
-                    <LinkComponent link="/admin-add-specialist" title="Add Specialist" />
                     <LinkComponent link="/admin-manage-specialist" title="Manage Specialist" />
-                    <LinkComponent link="/admin-edit-specialist" title="Edit Specialist" />
                 </div>
 
-                <div v-if="userAccountType == 2">
+                <div v-if="userAccountType ">
                     <!-- Add dinhi ang mga links sa specialist -->
-                    <LinkComponent link="/specialist-dashboard" title="Dashboard" />
                     <LinkComponent link="/specialist-setschedule" title="Set Schedule" />
                     <LinkComponent link="/specialist-appointment" title="View Appointments" />
-                    <LinkComponent link="/set" title="Set Appointment" />
                 </div>
 
-                <div v-if="userAccountType == 3">
+                <div v-if="userAccountType ">
                     <!--Add dinhi ang mga links sa patient-->
-                    <LinkComponent link="/dashboard" title="Dashboard" />
-                    <LinkComponent link="/profile" title="Profile" />
                     <LinkComponent link="/set" title="Set Appointment" />
                     <LinkComponent link="/appointment-history" title="Appointment History" />    
                 </div>
 
-                <div class="mt-4 mx-5">
+                <div class="py-4 mx-5">
                     <a href="javascript:void(0)" @click="logout" style="text-decoration:none;width:100%;">Logout</a>
                 </div>
             </div>
@@ -69,9 +62,10 @@ const logout = () => {
     </div>
 </template>
 
-<style>
+<style scoped>
 .sidebar__container {
     max-width: 220px;
+    height: 100%;
 }
 
 .slot__container {

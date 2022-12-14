@@ -1,12 +1,12 @@
 <script setup>
-import AdminSidebar from '../components/AdminSidebarComponent.vue'
+import SidebarComponent from '../components/SidebarComponent.vue'
 import {useUserStore} from '@/stores/user'
 const userStore = useUserStore()
 const authUser = userStore.authUser
 </script>
 
 <template>
-    <AdminSidebar> 
+    <SidebarComponent> 
         <div class="container">
         <div class="row justify-content-center" style="height:80vh">
             <div class="col-md-4 my-auto">
@@ -63,6 +63,6 @@ const authUser = userStore.authUser
         </div>
     </div>
 
-    </AdminSidebar>
+    </SidebarComponent>
 
 </template>

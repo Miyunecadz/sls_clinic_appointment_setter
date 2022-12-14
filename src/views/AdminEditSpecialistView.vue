@@ -1,5 +1,5 @@
 <script setup>
-import AdminSidebar from '../components/AdminSidebarComponent.vue'
+import SidebarComponent from '../components/SidebarComponent.vue'
 import { onBeforeMount, ref } from 'vue';
 import { useUserStore } from '@/stores/user'
 import { useRouter } from 'vue-router';
@@ -50,7 +50,7 @@ const updateProfile = async () => {
 </script>
 
 <template>
-    <AdminSidebar>
+    <SidebarComponent>
 
         <div class="container">
             <div class="row justify-content-center" style="height:80vh">
@@ -102,5 +102,5 @@ const updateProfile = async () => {
                 </div>
             </div>
         </div>
-    </AdminSidebar>
+    </SidebarComponent>
 </template>

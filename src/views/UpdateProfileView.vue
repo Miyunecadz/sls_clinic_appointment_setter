@@ -51,7 +51,6 @@ const updateProfile = async () => {
 
 <template>
     <Sidebar>
-
         <div class="container">
             <div class="row justify-content-center" style="height:80vh">
                 <div class="col-md-6 my-auto">
@@ -59,8 +58,8 @@ const updateProfile = async () => {
                     <form action="" method="post" @submit.prevent="updateProfile">
                         <div class="form-group">
                             <label for="id number">ID Number</label>
-                            <input type="text" name="id number" id="id number" class="form-control"
-                                v-model="id_number" readonly>
+                            <input type="text" name="id number" id="id number" class="form-control" v-model="id_number"
+                                readonly>
                         </div>
                         <div class="row gap-1">
                             <div class="form-group col-md">
