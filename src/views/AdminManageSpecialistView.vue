@@ -38,7 +38,7 @@ const authUser = userStore.authUser
                   
                   <td>
                     <div class="btn-group" role="group" aria-label="action">
-  <RouterLink to="/adminedit-specialist" class="btn btn-warning">Edit Specialist</RouterLink>
+  <RouterLink to="/admin-edit-specialist" class="btn btn-warning">Edit Specialist</RouterLink>
 
   <button type="delete" class="btn btn-danger">Delete Specialist</button>
 </div>

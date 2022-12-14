@@ -26,7 +26,7 @@ const logout = () => {
                 </div>
 
               
-                <LinkComponent link="/adminmanage-specialist" title="Manage Specialist" />
+                <LinkComponent link="/admin-manage-specialist" title="Manage Specialist" />
                 <LinkComponent link="/admin-add-specialist" title="Add Specialist" />
 
                 <div class="mt-4 mx-5">
