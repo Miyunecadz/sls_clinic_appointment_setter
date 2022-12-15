@@ -21,12 +21,12 @@ const authUser = userStore.authUser
                                 </div>
                                 <div class="row gap-1">
                                     <div class="form-group col-md">
-                                        <label for="first">Date</label>
+                                        <label for="first">Date</label><span class="text-primary">(MM/DD/YYYY)</span>
                                         <input type="text" name="first name" id="first name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="last name">Time</label>
+                                    <label for="last name">Time</label><span class="text-primary">(HH:MM)</span>
                                     <input type="text" name="last name" id="last name" class="form-control">
                                 </div>
                                 <div class="form-group">

@@ -40,8 +40,10 @@ const logout = () => {
 
                 <div v-if="userAccountType == 2">
                     <!-- Add dinhi ang mga links sa specialist -->
-                    <LinkComponent link="/specialist-setschedule" title="Set Schedule" />
+                   <!-- <LinkComponent link="/specialist-setschedule" title="Set Schedule" />-->
                     <LinkComponent link="/specialist-appointment" title="View Appointments" />
+                    <LinkComponent link="/manage-schedules" title="Manage Schedules"/>
+
                 </div>
 
                 <div v-if="userAccountType == 3">
