@@ -33,18 +33,18 @@ const logout = () => {
 
                 <LinkComponent link="/profile" title="Profile" />
 
-                <div v-if="userAccountType ">
+                <div v-if="userAccountType == 1 ">
                     <!-- Add dinhi ang mga links sa admin -->
                     <LinkComponent link="/admin-manage-specialist" title="Manage Specialist" />
                 </div>
 
-                <div v-if="userAccountType ">
+                <div v-if="userAccountType == 2">
                     <!-- Add dinhi ang mga links sa specialist -->
                     <LinkComponent link="/specialist-setschedule" title="Set Schedule" />
                     <LinkComponent link="/specialist-appointment" title="View Appointments" />
                 </div>
 
-                <div v-if="userAccountType ">
+                <div v-if="userAccountType == 3">
                     <!--Add dinhi ang mga links sa patient-->
                     <LinkComponent link="/set" title="Set Appointment" />
                     <LinkComponent link="/appointment-history" title="Appointment History" />    
