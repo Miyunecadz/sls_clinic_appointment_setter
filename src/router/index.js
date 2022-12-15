@@ -100,7 +100,7 @@ const router = createRouter({
       component: SpecialistAppointmentView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/admin-dashboard',
@@ -108,7 +108,7 @@ const router = createRouter({
       component: AdminDashboardView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/admin-add-specialist',
@@ -116,7 +116,7 @@ const router = createRouter({
       component: AdminAddSpecialistView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/admin-manage-specialist',
@@ -124,7 +124,7 @@ const router = createRouter({
       component: AdminManageSpecialistView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/admin-edit-specialist',
@@ -132,7 +132,7 @@ const router = createRouter({
       component: AdminEditSpecialistView,
       meta: {
         middleware: auth
-      } // kani
+      }
     },
     {
       path: '/manage-schedules',
@@ -140,7 +140,7 @@ const router = createRouter({
       component: ManageScheduleView,
       meta: {
         middleware: auth
-      } // kani
+      }
     }
     
 
