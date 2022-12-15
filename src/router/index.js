@@ -14,6 +14,7 @@ import AdminDashboardView from '../views/AdminDashboardView.vue'
 import AdminAddSpecialistView from '../views/AdminAddSpecialistView.vue'
 import AdminManageSpecialistView from '../views/AdminManageSpecialistView.vue'
 import AdminEditSpecialistView from '../views/AdminEditSpecialistView.vue'
+import ManageScheduleView from '../views/ManageScheduleView.vue'
 
 import auth from '../middleware/auth'
 
@@ -129,6 +130,14 @@ const router = createRouter({
       path: '/admin-edit-specialist',
       name: 'admin-edit-specialist',
       component: AdminEditSpecialistView,
+      meta: {
+        middleware: auth
+      } // kani
+    },
+    {
+      path: '/manage-schedules',
+      name: 'manage-schedules',
+      component: ManageScheduleView,
       meta: {
         middleware: auth
       } // kani
