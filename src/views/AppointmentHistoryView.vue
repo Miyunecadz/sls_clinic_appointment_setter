@@ -4,6 +4,7 @@ import { useUserStore } from '@/stores/user'
 import { ref, onBeforeMount } from 'vue'
 import axios from 'axios'
 import ModalComponent from '../components/ModalComponent.vue';
+import RatingModalComponent from '../components/RatingModalComponent.vue';
 
 const userStore = useUserStore().authUser
 const appointments = ref({})
@@ -59,7 +60,18 @@ const setAppointmentInModal = (appointment) => {
                   </button>
                   <ModalComponent :appointment="appointmentModalData" :schedule="scheduleModalData" />
                 </td>
+                <td>
+                  <Button type="button" v-if="appointment.status=='approved'" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1" @click="setAppointmentInModal(appointment)">
+                    Rate
+                    
+                </Button>
+                  
+                <RatingModalComponent :appointment="appointmentModalData" />
+  
+                </td>
               </tr>
+              
             </tbody>
           </table>
         </div>
