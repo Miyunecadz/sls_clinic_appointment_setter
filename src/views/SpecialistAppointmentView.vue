@@ -36,6 +36,24 @@ async function approve(id) {
   }
   await getAppointments()
 }
+
+async function reject(id) {
+  rejectLoadingState.value = true
+  const url = "http://localhost:3000/appointments/reject";
+  let response = await axios.post(url, {
+    appointmentId: id,
+  });
+  response = await response.data;
+  rejectLoadingState.value = false;
+  if (!response.result) {
+    return Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: response.message,
+    });
+  }
+  await getAppointments();
+}
 </script>
 
 <template>
@@ -76,7 +94,7 @@ async function approve(id) {
                       <span>{{ approveLoadingState ? 'Approving...' : 'Approve' }}</span>
                     </button>
 
-                    <button type="button" :class="rejectLoadingState ? 'disabled': ''" class="btn btn-danger">
+                    <button type="button" :class="rejectLoadingState ? 'disabled': ''" class="btn btn-danger" @click="reject(appointment.id)">
                       <div v-if="rejectLoadingState" class="spinner-border text-light" role="status"
                         style="max-height:20px;max-width:20px">
                         <span class="visually-hidden">...</span>
