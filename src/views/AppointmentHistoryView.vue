@@ -1,43 +1,43 @@
 <script setup>
-import SidebarComponent from '../components/SidebarComponent.vue'
-import { useUserStore } from '@/stores/user'
-import { ref, onBeforeMount } from 'vue'
-import axios from 'axios'
-import ModalComponent from '../components/ModalComponent.vue';
-import RatingModalComponent from '../components/RatingModalComponent.vue';
+import SidebarComponent from "../components/SidebarComponent.vue";
+import { useUserStore } from "@/stores/user";
+import { ref, onBeforeMount } from "vue";
+import axios from "axios";
+import ModalComponent from "../components/ModalComponent.vue";
+import RatingModalComponent from "../components/RatingModalComponent.vue";
 
-const userStore = useUserStore().authUser
-const appointments = ref({})
+const userStore = useUserStore().authUser;
+const appointments = ref({});
 const getAppointments = async () => {
-  const response = await axios.post('http://localhost:3000/appointments/my-appointments', {
-    "userId": userStore.id
-  });
-  appointments.value = response.data.appointments
-  console.log(response.data.appointments)
-}
+  const response = await axios.post(
+    "http://localhost:3000/appointments/my-appointments",
+    {
+      userId: userStore.id,
+    }
+  );
+  appointments.value = response.data.appointments;
+  console.log(response.data.appointments);
+};
 
 onBeforeMount(async () => {
-  await getAppointments()
-})
+  await getAppointments();
+});
 
-const appointmentModalData = ref({})
-const scheduleModalData = ref({})
+const appointmentModalData = ref({});
+const scheduleModalData = ref({});
 const setAppointmentInModal = (appointment) => {
-  appointmentModalData.value = appointment
-  scheduleModalData.value = appointment.schedule
-}
+  appointmentModalData.value = appointment;
+  scheduleModalData.value = appointment.schedule;
+};
 </script>
-
-
 
 <template>
   <SidebarComponent>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6 my-auto">
-
+        <div class="col-md-10 my-auto">
           <h3>Appointment History</h3>
-          <table class="table ">
+          <table class="table">
             <thead>
               <tr>
                 <th scope="col">Appointment Title</th>
@@ -53,25 +53,37 @@ const setAppointmentInModal = (appointment) => {
                 <td>{{ appointment.schedule.date }}</td>
                 <td>{{ appointment.schedule.time }}</td>
                 <td>{{ appointment.status }}</td>
-                <td>
-                  <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" @click="setAppointmentInModal(appointment)">
-                    View Details
-                  </button>
-                  <ModalComponent :appointment="appointmentModalData" :schedule="scheduleModalData" />
-                </td>
-                <td>
-                  <Button type="button" v-if="appointment.status=='approved'" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal1" @click="setAppointmentInModal(appointment)">
-                    Rate
-                    
-                </Button>
-                  
-                <RatingModalComponent :appointment="appointmentModalData" />
-  
+                <td class="d-flex gap-2">
+                  <div class="view-appointment">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      @click="setAppointmentInModal(appointment)"
+                    >
+                      View Details
+                    </button>
+                    <ModalComponent
+                      :appointment="appointmentModalData"
+                      :schedule="scheduleModalData"
+                    />
+                  </div>
+                  <div class="rate-appointment">
+                    <Button
+                      type="button"
+                      v-if="appointment.status == 'approved'"
+                      class="btn btn-outline-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal1"
+                      @click="setAppointmentInModal(appointment)"
+                    >
+                      Rate
+                    </Button>
+                    <RatingModalComponent :appointment="appointmentModalData" />
+                  </div>
                 </td>
               </tr>
-              
             </tbody>
           </table>
         </div>
