@@ -33,7 +33,7 @@ const setAppointmentInModal = (appointment) => {
   <SidebarComponent>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6 my-auto">
+        <div class="col-md my-auto">
 
           <h3>Appointment History</h3>
           <table class="table ">
