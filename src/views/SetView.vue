@@ -93,7 +93,7 @@ const setAppointment = async () => {
                 <form action="" method="post">
                     <div class="row">
                         <div class="col-md">
-                            <div>
+                            <div class="form-group">
                                 <label for="first">First Name <span
                                             class="text-danger">*</span></label>
                                 <input v-model="inputData.first_name" type="text" name="first name" id="first name"
