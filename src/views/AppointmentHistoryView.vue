@@ -14,7 +14,21 @@ const getAppointments = async () => {
   });
   appointments.value = response.data.appointments
   console.log(response.data.appointments)
+
+  
 }
+
+const rating = ref({})
+const addAppointmentRating = async () => {
+  const response = await axios.post('http://localhost:3000/appointments/add-rating', {
+    "userId": userStore.id
+  });
+  rating.value = response.data.rating
+  console.log(response.data.rating)
+
+  
+}
+
 
 onBeforeMount(async () => {
   await getAppointments()
@@ -26,6 +40,20 @@ const setAppointmentInModal = (appointment) => {
   appointmentModalData.value = appointment
   scheduleModalData.value = appointment.schedule
 }
+
+
+onBeforeMount(async () => {
+  await addAppointmentRating()
+})
+
+const appointmentRatingModalData = ref({})
+const appointmentCommentModalData = ref({})
+const setRatingInModal = (rating) => {
+  appointmentRatingModalData.value = rating
+  appointmentCommentModalData.value = rating.comment
+}
+
+
 </script>
 
 
@@ -62,14 +90,15 @@ const setAppointmentInModal = (appointment) => {
                 </td>
                 <td>
                   <Button type="button" v-if="appointment.status=='approved'" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal1" @click="setAppointmentInModal(appointment)">
-                    Rate
+                  data-bs-target="#exampleModal1" @click="setRatingInModal(rating)">
+                    Give Rating
                     
                 </Button>
                   
-                <RatingModalComponent :appointment="appointmentModalData" />
+                <RatingModalComponent :rating="appointmentRatingModalData" :comment="appointmentCommentModalData"/>
   
                 </td>
+              
               </tr>
               
             </tbody>

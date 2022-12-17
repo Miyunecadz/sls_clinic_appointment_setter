@@ -16,11 +16,11 @@ defineProps({
                 </div>
                 <div class="modal-body">
                     <div class="form-group my-3">
-                        <label for="firstname">RATE here, {{ appointment.first_name }}</label>
-                        <label for="username"></label>
-            <input type="number" name="rate" id="rate" class="form-control"
+                        <label for="">Rate here, {{ appointment.first_name }}</label>
+                        <label for="rate"></label>
+            <input type="number" name="rate" id="rate" class="form-control gap-2"
               placeholder="rate up to 5 only">
-              <input type="string" name="comment" id="rate" class="form-control"
+              <input type="string" name="comment" id="comment" class="form-control"
               placeholder="comment">
              
                     </div>
@@ -31,7 +31,7 @@ defineProps({
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-success" data-bs-submit="modal">Submit</button>
 
                 </div>
 
