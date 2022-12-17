@@ -61,6 +61,7 @@ defineProps({
           <div class="form-group my-3">
             <label for="firstname">Email: {{ appointment.email }}</label>
           </div>
+          
         </div>
         <div class="modal-footer">
           <button

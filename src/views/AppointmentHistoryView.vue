@@ -21,14 +21,30 @@ const getAppointments = async () => {
 
 const rating = ref({})
 const addAppointmentRating = async () => {
-  const response = await axios.post('http://localhost:3000/appointments/add-rating', {
-    "userId": userStore.id
+  const response = await axios.post('http://localhost:3000/appointments/add-rating', 
+  {
+      rating: value,
+     
+  
+   
   });
   rating.value = response.data.rating
   console.log(response.data.rating)
 
   
 }
+
+onBeforeMount(async () => {
+  await addAppointmentRating();
+});
+
+const appointmentRatingModalData = ref({});
+const appointmentCommentModalData = ref({});
+const setAppointmentRatingInModal = (rating) => {
+  appointmentRatingModalData.value = rating;
+  appointmentCommentModalData.value = rating.Comment;
+};
+
 
 
 onBeforeMount(async () => {
@@ -49,7 +65,9 @@ const setAppointmentInModal = (appointment) => {
 
 <template>
   <SidebarComponent>
+    
     <div class="container">
+      
       <div class="row justify-content-center">
         <div class="col-md-10 my-auto">
           <h3>Appointment History</h3>
@@ -92,19 +110,24 @@ const setAppointmentInModal = (appointment) => {
                       class="btn btn-outline-success"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal1"
-                      @click="setAppointmentInModal(appointment)"
+                      @click="setAppointmentRatingInModal(rating)"
                     >
                       Rate
                     </Button>
-                    <RatingModalComponent :appointment="appointmentModalData" />
+                    <RatingModalComponent :appointment="appointmentRatingModalData" />
                   </div>
                 </td>
               
               </tr>
+              
             </tbody>
           </table>
+          
         </div>
       </div>
     </div>
+   
+
+      
   </SidebarComponent>
 </template>

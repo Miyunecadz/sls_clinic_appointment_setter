@@ -53,9 +53,10 @@ defineProps({
             </div>
             <textarea name="comment" id="comment" cols="30" rows="5" class="form-control" placeholder="Comment"></textarea>
           </div>
+          
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" @click="setAppointmentInModal" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-success" @click="addAppointmentRating" value="rating" data-bs-dismiss="modal">
             Submit
           </button>
         </div>
