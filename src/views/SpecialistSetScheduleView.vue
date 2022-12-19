@@ -10,20 +10,20 @@ const authUser = userStore.authUser;
 const service = ref("");
 const date = ref(0);
 const time = ref(0);
-const onLoadingState = ref(false)
+const onLoadingState = ref(false);
 
-const setSchedule = async() => {
-  onLoadingState.value = true
-  const url = "http://localhost:3000/schedules"
+const setSchedule = async () => {
+  onLoadingState.value = true;
+  const url = "http://localhost:3000/schedules";
   let response = await axios.post(url, {
     specialist_id: authUser.id,
     date: date.value,
     time: time.value,
-    service_type: service.value
-  })
-  response = await response.data
-  onLoadingState.value = false
-  if(!response.result) {
+    service_type: service.value,
+  });
+  response = await response.data;
+  onLoadingState.value = false;
+  if (!response.result) {
     return Swal.fire({
       icon: "error",
       title: "Oops...",
@@ -31,15 +31,15 @@ const setSchedule = async() => {
     });
   }
 
-  date.value = ""
-  time.value = ""
-  service.value = ""
+  date.value = "";
+  time.value = "";
+  service.value = "";
   return Swal.fire({
     icon: "success",
     title: "Great",
-    text: response.message
-  })
-}
+    text: response.message,
+  });
+};
 </script>
 
 <template>
@@ -69,7 +69,9 @@ const setSchedule = async() => {
                 </option>
                 <option value="Referral">Referral</option>
                 <option value="Physical Assessment">Physical Assessment</option>
-                <option value="Provision of Comfort">Provision of Comfort</option>
+                <option value="Provision of Comfort">
+                  Provision of Comfort
+                </option>
               </select>
             </div>
             <div class="form-group">
@@ -96,16 +98,21 @@ const setSchedule = async() => {
             </div>
             <div class="row justify-content-center">
               <div class="col me-auto">
-                <button :class="onLoadingState ? 'disabled': ''" type="button" class="btn btn-success mt-2" @click.prevent="setSchedule">
+                <button
+                  :class="onLoadingState ? 'disabled' : ''"
+                  type="button"
+                  class="btn btn-success mt-2"
+                  @click.prevent="setSchedule"
+                >
                   <div
-                v-if="onLoadingState"
-                class="spinner-border text-light"
-                role="status"
-                style="max-height: 20px; max-width: 20px"
-              >
-                <span class="visually-hidden">...</span>
-              </div>
-                  {{onLoadingState ? 'Saving...' : 'Set Schedule'}}
+                    v-if="onLoadingState"
+                    class="spinner-border text-light"
+                    role="status"
+                    style="max-height: 20px; max-width: 20px"
+                  >
+                    <span class="visually-hidden">...</span>
+                  </div>
+                  {{ onLoadingState ? "Saving..." : "Set Schedule" }}
                 </button>
               </div>
             </div>

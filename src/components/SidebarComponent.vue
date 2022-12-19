@@ -38,7 +38,11 @@ const logout = () => {
           >
         </div>
 
-        <LinkComponent link="/profile" title="Profile" v-if="userAccountType != 1"/>
+        <LinkComponent
+          link="/profile"
+          title="Profile"
+          v-if="userAccountType != 1"
+        />
 
         <div v-if="userAccountType == 1">
           <!-- Add dinhi ang mga links sa admin -->

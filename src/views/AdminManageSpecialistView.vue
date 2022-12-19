@@ -2,19 +2,22 @@
 import SidebarComponent from "../components/SidebarComponent.vue";
 import { useUserStore } from "@/stores/user";
 import axios from "axios";
-import {ref} from 'vue'
+import { ref, onMounted } from "vue";
 
 const userStore = useUserStore();
 const authUser = userStore.authUser;
-const specialists = ref([])
+const specialists = ref([]);
 
+const getAllSpecialist = async () => {
+  const url = "http://localhost:3000/specialists";
+  let response = await axios.get(url);
+  response = response.data;
+  specialists.value = response.specialists;
+};
 
-const getAllSpecialist = async() => {
-  const url = "http://localhost:3000/specialists"
-  let response = await axios.get(url)
-  response = response.data
-  specialists.value = response.specialists
-}
+onMounted(async()=> {
+  await getAllSpecialist()
+})
 </script>
 
 <template>
@@ -53,21 +56,21 @@ const getAllSpecialist = async() => {
               </tr>
             </thead>
             <tbody class="table-group-divider">
-              <td>Name</td>
-
-              <td>
-                <div class="btn-group" role="group" aria-label="action">
-                  <RouterLink
+              <tr v-for="specialist in specialists">
+                <td>{{ specialist.first_name }} {{ specialist.last_name }}</td>
+                <td>
+                  <div class="d-flex gap-3">
+                    <RouterLink
                     to="/admin-edit-specialist"
                     class="btn btn-warning"
                     >Edit Specialist</RouterLink
                   >
-
                   <button type="delete" class="btn btn-danger">
                     Delete Specialist
                   </button>
-                </div>
-              </td>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
