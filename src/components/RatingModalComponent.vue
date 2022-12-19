@@ -2,43 +2,17 @@
 import { defineProps, ref } from "vue";
 import axios from 'axios'
 import { useRouter } from "vue-router";
-defineProps({
+const props = defineProps({
   appointment: Object,
+  addAppointmentRating: Function
 });
 
 const onLoadingState = ref(false)
 const rate = ref(0)
 const comment = ref("")
-const router = useRouter();
 
-const addAppointmentRating = async(appointmentId) => {
-  onLoadingState.value = true
-  const url = "http://localhost:3000/appointments/add-rating"
-  let response =await axios.post(url, {
-    appointmentId: appointmentId,
-    rating: rate.value,
-    comment: comment.value
-  })
-  response = await response.data
-  
-  if(!response.result) {
-    return Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: response.message,
-    });
-  }
-
-  rate.value = 0
-  comment.value = ""
-
-  Swal.fire({
-    icon: "success",
-    title: "Success!",
-    text: response.message
-  })
-  
-  return router.push("/appointment-history");
+const addRating = async(appointmentId) => {
+  await props.addAppointmentRating(appointmentId, rate.value, comment.value)
 }
 </script>
 <template>
@@ -147,7 +121,7 @@ const addAppointmentRating = async(appointmentId) => {
           <button
             type="button"
             class="btn btn-success"
-            @click="addAppointmentRating(appointment.id)"
+            @click="addRating(appointment.id)"
             value="rating"
             data-bs-dismiss="modal"
           >

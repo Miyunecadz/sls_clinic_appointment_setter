@@ -2,6 +2,7 @@
 import SidebarComponent from "../components/SidebarComponent.vue";
 import { useUserStore } from "@/stores/user";
 import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 import axios from "axios";
 import ModalComponent from "../components/ModalComponent.vue";
 import RatingModalComponent from "../components/RatingModalComponent.vue";
@@ -29,6 +30,33 @@ const appointmentRatingModalData = ref({})
 const setAppointmentDataInRatingModal = (appointment) => {
   appointmentRatingModalData.value = appointment
 };
+
+
+const addAppointmentRating = async(appointmentId, rating, comment) => {
+  const url = "http://localhost:3000/appointments/add-rating"
+  let response =await axios.post(url, {
+    appointmentId: appointmentId,
+    rating: rating,
+    comment: comment
+  })
+  response = await response.data
+  
+  if(!response.result) {
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: response.message,
+    });
+  }
+
+  await getAppointments();
+  return Swal.fire({
+    icon: "success",
+    title: "Success!",
+    text: response.message
+  })
+  
+}
 
 onMounted(async () => {
   await getAppointments();
@@ -76,7 +104,7 @@ onMounted(async () => {
                   <div class="rate-appointment">
                     <Button
                       type="button"
-                      v-if="appointment.status == 'approved' && appointment.rating == null"
+                      v-if="appointment.status == 'approved' && (appointment.rating == null || appointment.rating == 0)"
                       class="btn btn-outline-success"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal1"
@@ -86,6 +114,7 @@ onMounted(async () => {
                     </Button>
                     <RatingModalComponent
                       :appointment="appointmentRatingModalData"
+                      :addAppointmentRating = "addAppointmentRating"
                     />
                   </div>
                 </td>
