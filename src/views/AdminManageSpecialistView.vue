@@ -1,8 +1,20 @@
 <script setup>
 import SidebarComponent from "../components/SidebarComponent.vue";
 import { useUserStore } from "@/stores/user";
+import axios from "axios";
+import {ref} from 'vue'
+
 const userStore = useUserStore();
 const authUser = userStore.authUser;
+const specialists = ref([])
+
+
+const getAllSpecialist = async() => {
+  const url = "http://localhost:3000/specialists"
+  let response = await axios.get(url)
+  response = response.data
+  specialists.value = response.specialists
+}
 </script>
 
 <template>
