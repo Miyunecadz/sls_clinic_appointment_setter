@@ -1,9 +1,45 @@
 <script setup>
-import { defineProps, onBeforeMount } from "vue";
+import { defineProps, ref } from "vue";
+import axios from 'axios'
+import { useRouter } from "vue-router";
 defineProps({
   appointment: Object,
-  schedule: Object,
 });
+
+const onLoadingState = ref(false)
+const rate = ref(0)
+const comment = ref("")
+const router = useRouter();
+
+const addAppointmentRating = async(appointmentId) => {
+  onLoadingState.value = true
+  const url = "http://localhost:3000/appointments/add-rating"
+  let response =await axios.post(url, {
+    appointmentId: appointmentId,
+    rating: rate.value,
+    comment: comment.value
+  })
+  response = await response.data
+  
+  if(!response.result) {
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: response.message,
+    });
+  }
+
+  rate.value = 0
+  comment.value = ""
+
+  Swal.fire({
+    icon: "success",
+    title: "Success!",
+    text: response.message
+  })
+  
+  return router.push("/appointment-history");
+}
 </script>
 <template>
   <div
@@ -28,35 +64,93 @@ defineProps({
         </div>
         <div class="modal-body">
           <div class="form-group my-1">
-            <h6>Rate here, {{appointment.first_name}}</h6>
+            <h6>Rate here, {{ appointment.first_name }}</h6>
             <div class="form-group d-flex justify-content-center gap-3">
-                <div class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4">
-                    <input type="radio" name="rating" id="rating1" value ="1" v-model="rate" class="form-check-input">
-                    <label for="rating1" class="form-check-label">1</label>
-                </div>
-                <div class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4">
-                    <input type="radio" name="rating" id="rating2" value ="2" v-model="rate" class="form-check-input">
-                    <label for="rating2" class="form-check-label">2</label>
-                </div>
-                <div class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4">
-                    <input type="radio" name="rating" id="rating3" value ="3" v-model="rate" class="form-check-input">
-                    <label for="rating3" class="form-check-label">3</label>
-                </div>
-                <div class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4">
-                    <input type="radio" name="rating" id="rating4" value ="4" v-model="rate" class="form-check-input">
-                    <label for="rating4" class="form-check-label">4</label>
-                </div>
-                <div class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4">
-                    <input type="radio" name="rating" id="rating5" value ="5" v-model="rate" class="form-check-input">
-                    <label for="rating5" class="form-check-label">5</label>
-                </div>
+              <div
+                class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4"
+              >
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating1"
+                  value="1"
+                  v-model="rate"
+                  class="form-check-input"
+                />
+                <label for="rating1" class="form-check-label">1</label>
+              </div>
+              <div
+                class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4"
+              >
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating2"
+                  value="2"
+                  v-model="rate"
+                  class="form-check-input"
+                />
+                <label for="rating2" class="form-check-label">2</label>
+              </div>
+              <div
+                class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4"
+              >
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating3"
+                  value="3"
+                  v-model="rate"
+                  class="form-check-input"
+                />
+                <label for="rating3" class="form-check-label">3</label>
+              </div>
+              <div
+                class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4"
+              >
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating4"
+                  value="4"
+                  v-model="rate"
+                  class="form-check-input"
+                />
+                <label for="rating4" class="form-check-label">4</label>
+              </div>
+              <div
+                class="rating d-flex flex-column align-items-center gap-1 mx-3 my-4"
+              >
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating5"
+                  value="5"
+                  v-model="rate"
+                  class="form-check-input"
+                />
+                <label for="rating5" class="form-check-label">5</label>
+              </div>
             </div>
-            <textarea name="comment" id="comment" cols="30" rows="5" class="form-control" placeholder="Comment"></textarea>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="5"
+              class="form-control"
+              placeholder="Comment"
+              v-model="comment"
+            ></textarea>
           </div>
-          
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" @click="addAppointmentRating" value="rating" data-bs-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-success"
+            @click="addAppointmentRating(appointment.id)"
+            value="rating"
+            data-bs-dismiss="modal"
+          >
             Submit
           </button>
         </div>

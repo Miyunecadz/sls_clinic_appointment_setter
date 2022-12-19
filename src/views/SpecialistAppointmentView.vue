@@ -9,12 +9,12 @@ const appointments = ref([]);
 const approveLoadingState = ref(false);
 const rejectLoadingState = ref(false);
 const searchLoadingState = ref(false);
-const keyword = ref("")
+const keyword = ref("");
 
 const getAppointments = async (data = []) => {
   const specialistId = authUser.id;
   const url = "http://localhost:3000/appointments/" + specialistId;
-  if(data.length == 0) {
+  if (data.length == 0) {
     let response = await axios.get(url);
     appointments.value = await response.data.appointments;
     return;
@@ -63,16 +63,15 @@ async function reject(id) {
   await getAppointments();
 }
 
-const search = async() => {
-  searchLoadingState.value = true
-  const url = "http://localhost:3000/appointments/search-keyword"
-  console.log(keyword, authUser.id)
+const search = async () => {
+  searchLoadingState.value = true;
+  const url = "http://localhost:3000/appointments/search-keyword";
   let response = await axios.post(url, {
-    keyword: keyword,
-    specialist_id: authUser.id
-  })
-  response = await response.data
-  searchLoadingState.value = true
+    keyword: keyword.value,
+    specialist_id: authUser.id,
+  });
+  searchLoadingState.value = false;
+  response = await response.data;
   if (!response.result) {
     return Swal.fire({
       icon: "error",
@@ -80,8 +79,8 @@ const search = async() => {
       text: response.message,
     });
   }
-  await getAppointments(response)
-}
+  await getAppointments(response);
+};
 </script>
 
 <template>
@@ -93,7 +92,7 @@ const search = async() => {
             <input
               type="text"
               class="form-control"
-              placeholder="Search"
+              placeholder="Search keyword"
               aria-label="search"
               aria-describedby="button-addon2"
               v-model="keyword"
@@ -105,15 +104,15 @@ const search = async() => {
               id="button-addon2"
               :class="searchLoadingState ? 'disabled' : ''"
             >
-            <div
-              v-if="searchLoadingState"
-              class="spinner-border text-light"
-              role="status"
-              style="max-height: 20px; max-width: 20px"
-            >
-              <span class="visually-hidden">...</span>
-            </div>
-              <span>{{searchLoadingState ? "Searching..." : "Search"}}</span>
+              <div
+                v-if="searchLoadingState"
+                class="spinner-border text-light"
+                role="status"
+                style="max-height: 20px; max-width: 20px"
+              >
+                <span class="visually-hidden">...</span>
+              </div>
+              <span>{{ searchLoadingState ? "Searching..." : "Search" }}</span>
             </button>
           </div>
           <h3>Appointments</h3>

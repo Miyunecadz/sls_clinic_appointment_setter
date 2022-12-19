@@ -71,7 +71,6 @@ async function deleteAccount() {
           <div class="form-group my-3">
             <label for="email">Email: {{ authUser.email }}</label>
           </div>
-          
 
           <div class="form-group my-3 d-grid gap-2">
             <RouterLink class="btn btn-success" to="/update-profile"
