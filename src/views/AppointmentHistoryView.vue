@@ -26,22 +26,21 @@ const setAppointmentDataInModal = (appointment) => {
   scheduleModalData.value = appointment.schedule;
 };
 
-const appointmentRatingModalData = ref({})
+const appointmentRatingModalData = ref({});
 const setAppointmentDataInRatingModal = (appointment) => {
-  appointmentRatingModalData.value = appointment
+  appointmentRatingModalData.value = appointment;
 };
 
-
-const addAppointmentRating = async(appointmentId, rating, comment) => {
-  const url = "http://localhost:3000/appointments/add-rating"
-  let response =await axios.post(url, {
+const addAppointmentRating = async (appointmentId, rating, comment) => {
+  const url = "http://localhost:3000/appointments/add-rating";
+  let response = await axios.post(url, {
     appointmentId: appointmentId,
     rating: rating,
-    comment: comment
-  })
-  response = await response.data
-  
-  if(!response.result) {
+    comment: comment,
+  });
+  response = await response.data;
+
+  if (!response.result) {
     return Swal.fire({
       icon: "error",
       title: "Oops...",
@@ -53,10 +52,9 @@ const addAppointmentRating = async(appointmentId, rating, comment) => {
   return Swal.fire({
     icon: "success",
     title: "Success!",
-    text: response.message
-  })
-  
-}
+    text: response.message,
+  });
+};
 
 onMounted(async () => {
   await getAppointments();
@@ -104,7 +102,10 @@ onMounted(async () => {
                   <div class="rate-appointment">
                     <Button
                       type="button"
-                      v-if="appointment.status == 'approved' && (appointment.rating == null || appointment.rating == 0)"
+                      v-if="
+                        appointment.status == 'approved' &&
+                        (appointment.rating == null || appointment.rating == 0)
+                      "
                       class="btn btn-outline-success"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal1"
@@ -114,7 +115,7 @@ onMounted(async () => {
                     </Button>
                     <RatingModalComponent
                       :appointment="appointmentRatingModalData"
-                      :addAppointmentRating = "addAppointmentRating"
+                      :addAppointmentRating="addAppointmentRating"
                     />
                   </div>
                 </td>

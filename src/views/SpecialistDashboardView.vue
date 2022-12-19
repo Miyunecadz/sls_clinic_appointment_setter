@@ -8,7 +8,7 @@ const authUser = userStore.authUser;
 <template>
   <SidebarComponent>
     <div class="row justify-content-center">
-      <div class="col-md-3 my-auto p-2 p-md-4">
+      <div class="col-md my-auto p-2 p-md-4">
         <h3>
           Welcome, Doctor<label for="first_name">{{
             authUser.first_name

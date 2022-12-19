@@ -9,7 +9,16 @@ const authUser = userStore.authUser;
 const router = useRouter();
 
 const onLoadState = ref(false);
-const id_number = ref(authUser.id_number);
+const id_number = ref("");
+
+onBeforeMount(()=>{
+  if(authUser.account_type == 1) {
+    id_number.value = authUser.id_number
+  } else if(authUser.account_type == 2) {
+    id_number.value = authUser.employee_id
+  }
+})
+
 const userInput = ref({
   id: authUser.id,
   status: authUser.status,
@@ -24,7 +33,12 @@ const userInput = ref({
 
 const updateProfile = async () => {
   onLoadState.value = true;
-  const url = "http://localhost:3000/patients/update";
+  let url = "";
+  if(authUser.account_type == 1) {
+    url = "http://localhost:3000/patients/update";
+  } else if (authUser.account_type == 2) {
+    url = "http://localhost:3000/profile/update";
+  }
   const response = await userStore.save(url, userInput.value);
 
   if (!response.result) {
@@ -57,7 +71,7 @@ const updateProfile = async () => {
           <h4>Update Profile</h4>
           <form action="" method="post" @submit.prevent="updateProfile">
             <div class="form-group">
-              <label for="id number">ID Number</label>
+              <label for="id number">{{authUser.account_type == 1 ? 'ID Number' : 'Employee ID'}}</label>
               <input
                 type="text"
                 name="id number"
@@ -78,7 +92,7 @@ const updateProfile = async () => {
                   v-model="userInput.first_name"
                 />
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-4" v-if="authUser.account_type == 1">
                 <label for="middle name">Middle Name</label>
                 <input
                   type="text"
@@ -99,7 +113,7 @@ const updateProfile = async () => {
                 v-model="userInput.last_name"
               />
             </div>
-            <div class="form-group">
+            <div class="form-group" v-if="authUser.account_type == 1">
               <label for="gender">Gender</label>
               <select
                 name="gender"

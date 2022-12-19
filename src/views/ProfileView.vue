@@ -9,6 +9,7 @@ const router = useRouter();
 const userStore = useUserStore();
 const authUser = userStore.authUser;
 const loadingState = ref(false);
+
 async function deleteAccount() {
   loadingState.value = true;
   const id = authUser.id;
@@ -76,7 +77,7 @@ async function deleteAccount() {
             <RouterLink class="btn btn-success" to="/update-profile"
               >Update Profile</RouterLink
             >
-            <button
+            <!-- <button
               type="button"
               class="btn btn-danger"
               @click.prevent="deleteAccount"
@@ -90,7 +91,7 @@ async function deleteAccount() {
                 <span class="visually-hidden">...</span>
               </div>
               {{ loadingState ? "Deleting Profile ..." : "Delete Profile" }}
-            </button>
+            </button> -->
           </div>
         </form>
       </div>

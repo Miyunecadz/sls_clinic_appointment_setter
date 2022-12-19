@@ -1,19 +1,19 @@
 <script setup>
 import { defineProps, ref } from "vue";
-import axios from 'axios'
+import axios from "axios";
 import { useRouter } from "vue-router";
 const props = defineProps({
   appointment: Object,
-  addAppointmentRating: Function
+  addAppointmentRating: Function,
 });
 
-const onLoadingState = ref(false)
-const rate = ref(0)
-const comment = ref("")
+const onLoadingState = ref(false);
+const rate = ref(0);
+const comment = ref("");
 
-const addRating = async(appointmentId) => {
-  await props.addAppointmentRating(appointmentId, rate.value, comment.value)
-}
+const addRating = async (appointmentId) => {
+  await props.addAppointmentRating(appointmentId, rate.value, comment.value);
+};
 </script>
 <template>
   <div

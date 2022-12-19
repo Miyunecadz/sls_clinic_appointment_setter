@@ -87,7 +87,7 @@ const search = async () => {
   <SidebarComponent>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md my-4">
+        <div class="col-md my-4" style="height: 90vh; overflow: auto">
           <div class="input-group mb-3">
             <input
               type="text"
