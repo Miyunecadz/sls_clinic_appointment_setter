@@ -72,7 +72,7 @@ const updateProfile = async () => {
           <form action="" method="post" @submit.prevent="updateProfile">
             <div class="form-group">
               <label for="id number">{{
-                authUser.account_type == 1 ? "ID Number" : "Employee ID"
+                authUser.account_type == 3 ? "ID Number" : "Employee ID"
               }}</label>
               <input
                 type="text"
