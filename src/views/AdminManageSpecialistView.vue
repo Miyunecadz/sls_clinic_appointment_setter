@@ -4,7 +4,7 @@ import { useUserStore } from "@/stores/user";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import {useTempStore} from '@/stores/temp';
-import { useRouter } from "vue-router";
+import { useRouter, RouterLink } from "vue-router";
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -56,7 +56,12 @@ onMounted(async()=> {
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-8 my-4">
-          <h4>List of Specialist</h4>
+          <div class="d-flex ">
+            <h4>List of Specialist</h4>
+            <router-link to="/admin-add-specialist" class="ms-auto btn btn-primary">
+              Add Specialist
+            </router-link>
+          </div>
           <table class="table">
             <thead>
               <tr>

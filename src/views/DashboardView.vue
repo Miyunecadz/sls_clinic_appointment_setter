@@ -39,7 +39,7 @@ onMounted(async() => {
         >
           <div class="card p-2">
             <h2 class="text-center">{{patients}}</h2>
-            <h6 class="mt-2">Number of Students</h6>
+            <h6 class="mt-2">Number of Patients</h6>
           </div>
           <div class="card p-2">
             <h2 class="text-center">{{appointments}}</h2>

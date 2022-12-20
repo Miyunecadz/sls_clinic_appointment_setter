@@ -36,7 +36,7 @@ onMounted(async() => {
         >
           <div class="card-header bg-transparent border-success">SUMMARY</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Number of Patients:</li>
+            <li class="list-group-item">Number of Patients: </li>
             <li class="list-group-item">Appointments Set:</li>
             <li class="list-group-item">Available Sechdules:</li>
           </ul>
