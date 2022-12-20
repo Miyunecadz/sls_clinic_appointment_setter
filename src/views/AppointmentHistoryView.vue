@@ -74,6 +74,7 @@ onMounted(async () => {
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
                 <th scope="col">Status</th>
+                <th scope="col">Rating</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -83,6 +84,7 @@ onMounted(async () => {
                 <td>{{ appointment.schedule.date }}</td>
                 <td>{{ appointment.schedule.time }}</td>
                 <td>{{ appointment.status }}</td>
+                <td>{{ appointment.rating }}</td>
                 <td class="d-flex gap-2">
                   <div class="view-appointment">
                     <button
