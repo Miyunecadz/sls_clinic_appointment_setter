@@ -84,7 +84,7 @@ onMounted(async () => {
                 <td>{{ appointment.schedule.date }}</td>
                 <td>{{ appointment.schedule.time }}</td>
                 <td>{{ appointment.status }}</td>
-                <td>{{ appointment.rating }}</td>
+                <td>{{ appointment.rating ?? '0' }}</td>
                 <td class="d-flex gap-2">
                   <div class="view-appointment">
                     <button
