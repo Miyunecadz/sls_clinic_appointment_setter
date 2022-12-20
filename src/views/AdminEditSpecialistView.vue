@@ -1,32 +1,28 @@
 <script setup>
 import SidebarComponent from "../components/SidebarComponent.vue";
-import { onBeforeMount, ref } from "vue";
-import { useUserStore } from "@/stores/user";
+import { ref, onMounted } from "vue";
+import { useTempStore } from "@/stores/temp";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
-const userStore = useUserStore();
-const authUser = userStore.authUser;
+const temp = useTempStore().tempData
 const router = useRouter();
-
 const onLoadState = ref(false);
-const id_number = ref(authUser.id_number);
-const userInput = ref({
-  id: authUser.id,
-  status: authUser.status,
-  first_name: authUser.first_name,
-  middle_name: authUser.middle_name,
-  last_name: authUser.last_name,
-  gender: authUser.gender,
-  address: authUser.address,
-  contact_number: authUser.contact_number,
-  email: authUser.email,
-});
+
+const id = ref()
+const employee_id = ref()
+const inputData = ref({
+  first_name: "",
+    last_name: "",
+    contact_number: "",
+    email: "",
+})
 
 const updateProfile = async () => {
   onLoadState.value = true;
-  const url = "http://localhost:3000/patients/update";
-  const response = await userStore.save(url, userInput.value);
-
+  const url = "http://localhost:3000/specialists/update/"+id.value;
+  let response = await axios.post(url, inputData.value)
+  response = response.data
   if (!response.result) {
     onLoadState.value = false;
     return Swal.fire({
@@ -44,9 +40,24 @@ const updateProfile = async () => {
   });
 
   setTimeout(() => {
-    return router.push("/profile");
+    return router.push({name: "admin-manage-specialist"});
   }, 5000);
 };
+
+onMounted(()=> {
+  if(temp == null) {
+    return router.push({name: "admin-manage-specialist"})
+  }
+
+  id.value = temp.id
+  employee_id.value = temp.employee_id
+  inputData.value = {
+    first_name: temp.first_name,
+    last_name: temp.last_name,
+    contact_number: temp.contact_number,
+    email: temp.email,
+  }
+})
 </script>
 
 <template>
@@ -63,7 +74,7 @@ const updateProfile = async () => {
                 name="id number"
                 id="id number"
                 class="form-control"
-                v-model="id_number"
+                :value="employee_id"
                 readonly
               />
             </div>
@@ -75,7 +86,7 @@ const updateProfile = async () => {
                   name="first name"
                   id="first name"
                   class="form-control"
-                  v-model="userInput.first_name"
+                  v-model="inputData.first_name"
                 />
               </div>
               <div class="form-group col-md">
@@ -85,7 +96,7 @@ const updateProfile = async () => {
                   name="last name"
                   id="last name"
                   class="form-control"
-                  v-model="userInput.middle_name"
+                  v-model="inputData.last_name"
                 />
               </div>
             </div>
@@ -97,7 +108,7 @@ const updateProfile = async () => {
                 name="contact_number"
                 id="contact_number"
                 class="form-control"
-                v-model="userInput.contact_number"
+                v-model="inputData.contact_number"
               />
             </div>
             <div class="form-group">
@@ -107,7 +118,7 @@ const updateProfile = async () => {
                 name="email address"
                 id="email address"
                 class="form-control"
-                v-model="userInput.email"
+                v-model="inputData.email"
               />
             </div>
 

@@ -3,7 +3,10 @@ import SidebarComponent from "../components/SidebarComponent.vue";
 import { useUserStore } from "@/stores/user";
 import axios from "axios";
 import { ref, onMounted } from "vue";
+import {useTempStore} from '@/stores/temp';
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const userStore = useUserStore();
 const authUser = userStore.authUser;
 const specialists = ref([]);
@@ -15,6 +18,34 @@ const getAllSpecialist = async () => {
   specialists.value = response.specialists;
 };
 
+const deleteSpecialist = async(id) => {
+  const url = "http://localhost:3000/specialists/delete";
+  let response = await axios.post(url, {
+    id: id
+  })
+  response = response.data;
+  if(!response.result) {
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: response.message,
+    });
+  }
+
+  await getAllSpecialist()
+   return Swal.fire({
+      icon: "success",
+      title: "Great!",
+      text: response.message,
+    });
+}
+
+const updateSpecialist = (specialist) => {
+  const tempStore = useTempStore()
+  tempStore.tempData = specialist
+  router.push({name: 'admin-edit-specialist'})
+}
+
 onMounted(async()=> {
   await getAllSpecialist()
 })
@@ -24,29 +55,8 @@ onMounted(async()=> {
   <SidebarComponent>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6 my-4">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Search"
-              aria-label="search"
-              aria-describedby="button-addon2"
-            />
-            <button
-              class="btn btn-outline-primary"
-              type="button"
-              id="button-addon2"
-            >
-              Search
-            </button>
-          </div>
-          <h3>Manage Specialists</h3>
-          <div class="col md-4 me-auto">
-            <RouterLink to="/admin-add-specialist" class="btn btn-success"
-              >Add Specialist</RouterLink
-            >
-          </div>
+        <div class="col-8 my-4">
+          <h4>List of Specialist</h4>
           <table class="table">
             <thead>
               <tr>
@@ -56,16 +66,16 @@ onMounted(async()=> {
               </tr>
             </thead>
             <tbody class="table-group-divider">
-              <tr v-for="specialist in specialists">
+              <tr v-for="specialist in specialists" :key="specialist.id">
                 <td>{{ specialist.first_name }} {{ specialist.last_name }}</td>
                 <td>
                   <div class="d-flex gap-3">
-                    <RouterLink
-                    to="/admin-edit-specialist"
+                    <button
+                    type="button"
                     class="btn btn-warning"
-                    >Edit Specialist</RouterLink
-                  >
-                  <button type="delete" class="btn btn-danger">
+                    @click="updateSpecialist(specialist)"
+                    >Edit Specialist</button>
+                  <button type="button" class="btn btn-danger" @click="deleteSpecialist(specialist.id)">
                     Delete Specialist
                   </button>
                   </div>
